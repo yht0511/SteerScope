@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+
+# Environments and editor state
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# Runtime output and caches
+outputs/
+artifacts/
+cache/
+lm_cache/
+wandb/
+runtime_configs/
+*.log
+*.out
+*.pkl
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.lock
+.ms_upload_cache
+
+# Downloaded benchmark data (download scripts and metadata remain tracked)
+steerscope/data/bbq/
+steerscope/data/ifeval/
+steerscope/data/jailbreakbench/
+steerscope/data/math/
+steerscope/data/mmlu/
+steerscope/data/superglue/
+steerscope/data/truthfulqa/
+steerscope/data/x_alpaca_eval/
+steerscope/data/persist_lm_cache/
+steerscope/data/seed_instructions/
+steerscope/data/seed_sentences/
+
+# Local scratch files
+.tmp/
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,89 @@
+experiment:
+  model_key: 9b
+  layer: 31
+  config_dir: steerscope/sweep/paper/9b/l31
+  output_dir: outputs/paper/9b/l31
+
+runtime:
+  lm_cache_min_free_gb: 10
+
+easysteer:
+  enabled: true
+  gpus: [0, 1, 2]
+  host: 127.0.0.1
+  port: 8017
+  tensor_parallel_size: 1
+  data_parallel_size: 3
+  gpu_memory_utilization: 0.45
+  allow_worker_overlap: true
+  enforce_eager: true
+  startup_timeout_seconds: 1200
+  extra_args:
+    - --max-steer-vectors
+    - "32"
+    - --max-model-len
+    - "2048"
+    - --no-enable-chunked-prefill
+    - --no-enable-prefix-caching
+
+study:
+  enabled: true
+  gpus: []
+  nproc_per_node: 1
+  max_retries: 3
+  retry_delay_seconds: 30
+
+workers:
+  gpus: [0, 1, 2, 3, 4, 5, 6, 7]
+  safety_margin_gb: 8
+  retry_exclusive_on_oom: true
+
+scheduler:
+  resume: true
+  poll_interval_seconds: 10
+  max_concurrent_api_runs: 8
+
+methods:
+  defaults:
+    gpu_count: 1
+    nproc_per_node: 1
+    vram_reservation_gb: 30
+    exclusive_gpu: false
+    max_retries: 1
+  overrides:
+    FLAS: {vram_reservation_gb: 70, exclusive_gpu: true, priority: 100}
+    HyperSteer: {vram_reservation_gb: 70, exclusive_gpu: true, priority: 90}
+    SFT: {gpu_count: 2, nproc_per_node: 2, vram_reservation_gb: 70, exclusive_gpu: true, priority: 80}
+    LoRA: {vram_reservation_gb: 52, exclusive_gpu: true, priority: 70}
+    LoReFT: {vram_reservation_gb: 52, exclusive_gpu: true, priority: 70}
+    ODESteer: {vram_reservation_gb: 48, exclusive_gpu: true, priority: 60}
+    StepODESteer: {vram_reservation_gb: 48, exclusive_gpu: true, priority: 60}
+    HiDRA: {vram_reservation_gb: 42, priority: 50}
+    GemmaScopeSAEMaxAUC: {vram_reservation_gb: 42, priority: 40}
+    PreferenceVector: {vram_reservation_gb: 70, exclusive_gpu: true, priority: 40}
+    APSR: {vram_reservation_gb: 42, priority: 30}
+    SPSR: {vram_reservation_gb: 42, priority: 30}
+    PromptSteering: {vram_reservation_gb: 52, exclusive_gpu: true, priority: 20}
+
+generalization:
+  enabled: true
+  gpus: []
+
+progress:
+  weights:
+    generate: 0.05
+    methods: 0.45
+    study: 0.35
+    generalization: 0.15
+
+wandb:
+  enabled: false
+  required: false
+  terminal: true
+  mode: online
+  project: steerscope-paper
+  name: steerscope-9b-l31
+  run_id: steerscope-9b-l31
+  group: gemma-2-9b-it
+  tags: [steerscope, paper, 9b, l31]
+  html_interval_seconds: 60

@@ -1,0 +1,44 @@
+[project]
+name = "steerscope"
+version = "0.1.0"
+description = "A benchmark for measuring the efficacy, side effects, and robustness of representation steering methods"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+keywords = ["language-models", "representation-steering", "evaluation", "benchmark"]
+dependencies = [
+    "datasets>=3.0.2",
+    "einops>=0.8.0",
+    "httpx[socks]>=0.28.1,<0.29",
+    "openai>=1.52.1",
+    "pyvene>=0.1.8",
+    "torch>=2.5.0",
+    "torchdiffeq>=0.2.5",
+    "transformers==4.45.1",
+    "wandb>=0.18.5",
+    "scikit-learn>=1.5.2",
+    "seaborn>=0.12.2",
+    "pyreft==0.1.0",
+    "peft==0.13.2",
+    "pyarrow>=17.0.0",
+    "jupyter>=1.1.1",
+    "adjusttext>=1.3.0",
+    "altair>=5.5.0",
+    "umap-learn>=0.5.7",
+    "absl-py>=2.1.0",
+    "immutabledict>=4.2.1",
+    "langdetect>=1.0.9",
+    "nltk>=3.9.1",
+    "evaluate>=0.4.3",
+    "textattack==0.3.10",
+    "tiktoken>=0.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

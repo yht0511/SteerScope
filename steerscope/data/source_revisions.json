@@ -1,0 +1,36 @@
+{
+  "pinned_at": "2026-09-26",
+  "note": "Release downloader revisions, not evidence of the historical paper data version.",
+  "huggingface": {
+    "cais/mmlu": {
+      "revision": "c30699e8356da336a370243923dbaf21066bb9fe"
+    },
+    "EleutherAI/hendrycks_math": {
+      "revision": "21a5633873b6a120296cce3e2df9d5550074f4a3"
+    },
+    "JailbreakBench/JBB-Behaviors": {
+      "revision": "886acc352a31533ffbcf4ef22c744658688086fc"
+    },
+    "tatsu-lab/alpaca_eval": {
+      "revision": "2edc6fad8be6b14ea7230aabfd08188da6b8b814"
+    },
+    "databricks/databricks-dolly-15k": {
+      "revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a"
+    },
+    "openai/gsm8k": {
+      "revision": "740312add88f781978c0658806c59bc2815b9866"
+    },
+    "iamtarun/python_code_instructions_18k_alpaca": {
+      "revision": "7cae181e29701a8663a07a3ea43c8e105b663ba1"
+    },
+    "zhengxuanzenwu/wikitext-2-split-128": {
+      "revision": "817f68fefc4d740360dded88d91f53089f21c10d"
+    },
+    "christopher/rosetta-code": {
+      "revision": "11d8b38cbd90b0ae5bde304ae2d4ba5ace10af05"
+    }
+  },
+  "github": {
+    "nyu-mll/BBQ": "bea11bd97d79217245b5871acd247b9d6eb24598"
+  }
+}

@@ -1,0 +1,667 @@
+generate:
+  lm_model: DeepSeek-V3.2-Instruct
+  output_length: 128
+  num_of_examples: 144
+  concept_path: steerscope/data/gemma-2-2b_20-gemmascope-res-16k.json
+  max_concepts: 500
+  api_concurrency: 64
+  dataset_category: instruction
+  master_data_dir: steerscope/data
+  seed: 42
+  keep_legacy_output_format: true
+train:
+  model_name: google/gemma-2-2b-it
+  layer: 20
+  component: res
+  output_length: 128
+  seed: 42
+  use_bf16: true
+  models:
+    PromptSteering:
+      lm_model: DeepSeek-V3.2-Instruct
+      prompt_temperature: 0.0
+    LsReFT:
+      batch_size: 6
+      gradient_accumulation_steps: 1
+      n_epochs: 3
+      lr: 0.01
+      weight_decay: 0.0
+      topk: 8
+      coeff_latent_l1_loss: 0.005
+      intervention_positions: all
+      intervention_type: addition
+      binarize_dataset: false
+      train_on_negative: true
+      exclude_bos: true
+    HyperSteer:
+      batch_size: 12
+      gradient_accumulation_steps: 1
+      n_epochs: 10
+      lr: 8.0e-05
+      weight_decay: 0.0
+      low_rank_dimension: 1
+      intervention_positions: all
+      intervention_type: addition
+      binarize_dataset: false
+      train_on_negative: false
+      exclude_bos: true
+      hypernet_name_or_path: google/gemma-2-2b
+      num_hidden_layers: 4
+      hypernet_initialize_from_pretrained: true
+    SteeringVector:
+      batch_size: 6
+      gradient_accumulation_steps: 1
+      n_epochs: 3
+      lr: 0.01
+      weight_decay: 0.0
+      topk: 8
+      coeff_latent_l1_loss: 0.005
+      intervention_positions: all
+      intervention_type: addition
+      binarize_dataset: false
+      train_on_negative: true
+      exclude_bos: true
+    DiffMean:
+      batch_size: 6
+      n_epochs: 1
+      binarize_dataset: true
+    PCA:
+      batch_size: 6
+      n_epochs: 1
+      binarize_dataset: true
+    LAT:
+      batch_size: 6
+      n_epochs: 1
+      binarize_dataset: true
+    Random:
+      batch_size: 6
+      n_epochs: 1
+      binarize_dataset: true
+    LinearProbe:
+      batch_size: 6
+      gradient_accumulation_steps: 8
+      n_epochs: 24
+      lr: 0.005
+      weight_decay: 0.001
+      coeff_l1_loss: 0.0
+      binarize_dataset: true
+    GemmaScopeSAEMaxAUC:
+      batch_size: 6
+      n_epochs: 1
+      binarize_dataset: true
+    LoRA:
+      batch_size: 3
+      gradient_accumulation_steps: 12
+      n_epochs: 24
+      lr: 0.0009
+      weight_decay: 0.0
+      low_rank_dimension: 4
+      lora_layers: &id001
+      - 5
+      - 10
+      - 15
+      - 20
+      lora_components:
+      - o_proj
+      lora_alpha: 32
+      binarize_dataset: false
+      train_on_negative: false
+      exclude_bos: true
+    LoReFT:
+      batch_size: 3
+      gradient_accumulation_steps: 12
+      n_epochs: 24
+      lr: 0.0009
+      weight_decay: 0.0
+      low_rank_dimension: 4
+      reft_layers: *id001
+      reft_positions: f5+l5
+      reft_type: Loreft
+      binarize_dataset: false
+      train_on_negative: false
+      exclude_bos: true
+    SFT:
+      batch_size: 3
+      gradient_accumulation_steps: 24
+      n_epochs: 8
+      lr: 4.0e-05
+      weight_decay: 0.0
+      binarize_dataset: false
+      train_on_negative: false
+      exclude_bos: true
+    FLAS:
+      batch_size: 32
+      gradient_accumulation_steps: 1
+      lr: 5.0e-05
+      weight_decay: 0.01
+      binarize_dataset: false
+      train_on_negative: false
+      intervention_positions: all
+      flas_num_blocks: 1
+      flas_n_steps: 3
+      flas_t_min: 0.5
+      flas_t_max: 2.0
+      flas_div_weight: 0.1
+      flas_total_steps: 80000
+      flas_warmup_steps: 2000
+      flas_max_length: 256
+      flas_concept_max_length: 64
+      flas_n_val_samples: 100
+      flas_val_n_concepts: 0
+      flas_val_every: 500
+      flas_val_batches: 100
+      flas_patience: 30
+      flas_num_workers: 4
+    APSR:
+      batch_size: 1
+      gradient_accumulation_steps: 1
+      n_epochs: 15
+      lr: 0.001
+      weight_decay: 1.0e-06
+      binarize_dataset: false
+      train_on_negative: false
+      lm_model: DeepSeek-V3.2-Instruct
+      prompt_temperature: 0.0
+    SPSR:
+      batch_size: 1
+      gradient_accumulation_steps: 1
+      n_epochs: 15
+      lr: 0.001
+      weight_decay: 1.0e-06
+      binarize_dataset: false
+      train_on_negative: false
+      lm_model: DeepSeek-V3.2-Instruct
+      prompt_temperature: 0.0
+    SphericalSteering:
+      batch_size: 16
+      binarize_dataset: true
+      train_on_negative: true
+      spherical_kappa: 20.0
+      spherical_beta: 0.1
+    HiDRA:
+      batch_size: 16
+      binarize_dataset: true
+      train_on_negative: true
+      hidra_projected_dim: 8192
+      hidra_negative_slope: 0.7
+      hidra_projection_seed: 42
+      hidra_normalize_direction: false
+    AUSteer:
+      batch_size: 16
+      binarize_dataset: true
+      train_on_negative: true
+      austeer_topk: 10
+    ODESteer:
+      batch_size: 16
+      binarize_dataset: true
+      train_on_negative: true
+      ode_degree: 2
+      ode_n_components: 8000
+      ode_gamma: 0.1
+      ode_coef0: 1.0
+      ode_linear_classifier: lr
+      ode_sketch_seed: 42
+      ode_solver: euler
+      ode_steps: 10
+    StepODESteer:
+      batch_size: 16
+      binarize_dataset: true
+      train_on_negative: true
+      ode_degree: 2
+      ode_n_components: 8000
+      ode_gamma: 0.1
+      ode_coef0: 1.0
+      ode_linear_classifier: lr
+      ode_sketch_seed: 42
+      ode_solver: euler
+      ode_steps: 10
+    PreferenceVector:
+      batch_size: 6
+      gradient_accumulation_steps: 1
+      n_epochs: 18
+      lr: 0.04
+      weight_decay: 0.0
+      low_rank_dimension: 1
+      intervention_positions: all
+      intervention_type: addition
+      binarize_dataset: false
+      train_on_negative: true
+      exclude_bos: true
+      loss_type: scaled_simpo
+      beta: 1.0
+      gemma: 0.0
+      simpo_scaler: 1.0
+      reference_free: true
+      label_smoothing: 0.0
+      dropout: 0.0
+      intervention_positions_dropout: 0.0
+      steering_factors:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 10.0
+      - 12.0
+      - 14.0
+      - 16.0
+      - 18.0
+      - 20.0
+      preference_pairs:
+      - orig_add
+      - orig_sub
+      steering_prompt_type: blend_in
+      substraction_type: null_it_out
+evaluate:
+  use_bf16: true
+  generate_reports: false
+  evaluation_run_id: study
+  models:
+  - PromptSteering
+  - SimplePromptSteering
+  - DiffMean
+  - PCA
+  - LAT
+  - Random
+  - LinearProbe
+  - SteeringVector
+  - LsReFT
+  - HyperSteer
+  - GemmaScopeSAE
+  - GemmaScopeSAEMaxAUC
+  - LoRA
+  - LoReFT
+  - SFT
+  - FLAS
+  - APSR
+  - SPSR
+  - SphericalSteering
+  - HiDRA
+  - AUSteer
+  - ODESteer
+  - StepODESteer
+  - PreferenceVector
+  model_name: google/gemma-2-2b-it
+  output_length: 128
+  steering_intervention_type: addition
+  steering_model_name: google/gemma-2-2b-it
+  steering_batch_size: 10
+  steering_output_length: 128
+  steering_layers:
+  - 20
+  runtime_backend: legacy
+  easysteer_url: http://127.0.0.1:8017
+  easysteer_timeout: 180
+  master_data_dir: steerscope/data
+  seed: 42
+  lm_model: gpt-4o-mini
+  temperature: 1.0
+  evaluators:
+    study_lm_judge:
+      type: LMJudgeEvaluator
+      report:
+        enabled: true
+      params:
+        judge_concurrency: 8
+        judge_pipeline_enabled: true
+      dataset:
+        type: AlpacaEval
+        split: all
+        num_examples: 20
+        seed: 42
+      inference:
+        strengths_by_model:
+          PromptSteering:
+          - 1.0
+          SimplePromptSteering:
+          - 1.0
+          DiffMean:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          PCA:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          LAT:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          Random:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          LinearProbe:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          SteeringVector:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          LsReFT:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          HyperSteer:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          GemmaScopeSAE:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          GemmaScopeSAEMaxAUC:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          LoRA:
+          - 1.0
+          LoReFT:
+          - 1.0
+          SFT:
+          - 1.0
+          FLAS:
+          - 1.0
+          - 1.5
+          - 2.0
+          - 2.5
+          - 3.0
+          APSR:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          SPSR:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
+          - 1.0
+          - 1.2
+          - 1.4
+          - 1.6
+          - 1.8
+          - 2.0
+          - 2.5
+          - 3.0
+          - 4.0
+          - 5.0
+          SphericalSteering:
+          - 0.04
+          - 0.06
+          - 0.08
+          - 0.1
+          - 0.12
+          - 0.16
+          - 0.2
+          - 0.3
+          - 0.4
+          - 0.5
+          - 0.6
+          - 0.7
+          - 0.8
+          - 1.0
+          HiDRA:
+          - 0.12
+          - 0.24
+          - 0.36
+          - 0.5
+          - 0.6
+          - 0.72
+          - 0.84
+          - 1.0
+          - 1.2
+          - 1.5
+          - 1.8
+          - 2.0
+          - 2.4
+          - 3.0
+          AUSteer:
+          - 1.0
+          - 2.5
+          - 5.0
+          - 7.5
+          - 10.0
+          - 15.0
+          - 20.0
+          - 30.0
+          - 40.0
+          - 50.0
+          - 75.0
+          - 100.0
+          - 150.0
+          - 200.0
+          ODESteer:
+          - 5.0
+          - 10.0
+          - 15.0
+          - 20.0
+          - 40.0
+          - 60.0
+          - 80.0
+          - 100.0
+          - 120.0
+          - 140.0
+          - 180.0
+          - 250.0
+          - 350.0
+          - 500.0
+          StepODESteer:
+          - 10.0
+          - 15.0
+          - 20.0
+          - 44.0
+          - 88.0
+          - 132.0
+          - 176.0
+          - 220.0
+          - 308.0
+          - 440.0
+          - 550.0
+          - 660.0
+          - 880.0
+          - 1100.0
+          PreferenceVector:
+          - 2.0
+          - 4.0
+          - 6.0
+          - 8.0
+          - 10.0
+          - 12.0
+          - 14.0
+          - 16.0
+          - 18.0
+          - 20.0
+          - 25.0
+          - 30.0
+          - 40.0
+          - 50.0
+        batch_size: 10
+        output_length: 128
+        temperature: 1.0
+        do_sample: true
+      concepts:
+        count: 50
+        seed: 42
+    study_result:
+      type: BestFactorEvaluator
+      depends_on:
+      - study_lm_judge
+      input:
+        from: study_lm_judge
+      report:
+        enabled: true
+      params:
+        metric: lm_judge_rating
+        group_by:
+        - method
+        strategy: argmax
+        aggregation: mean
+        baseline_factor: 0.0
+        fallback_baseline_method: DiffMean
+      concepts:
+        count: 50
+        seed: 42
+study:
+  factor_selection:
+    train_examples: 144
+    subset_seed: 42
+    external: true
+  sample_efficiency:
+    sizes:
+    - 6
+    - 12
+    - 36
+    - 72
+    num_examples: 10
+    subset_seed: 42
+    relative_report:
+      min_reference_improvement: 0.1
+  sample_sensitivity:
+    size: 24
+    subset_seeds:
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    num_examples: 20
+    temperature: 0.0
+    do_sample: false
+  result:
+    evaluator: study_result
+    metric: selected_improvement
+  concept_scopes:
+    default:
+      count: 50
+      seed: 42
+    by_method:
+      HyperSteer:
+        count: 500
+        seed: 42
+      FLAS:
+        count: 500
+        seed: 42
+      SFT:
+        count: 20
+        seed: 42
