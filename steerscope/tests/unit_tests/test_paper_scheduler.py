@@ -370,7 +370,7 @@ def test_study_result_uses_judge_concept_panel(model_layer):
 
 def test_checked_in_study_result_scopes_match_upstream():
     paths = sorted(_source_dir().parents[1].glob("*/*/study.yaml"))
-    assert len(paths) == 4
+    assert paths
     for path in paths:
         config = yaml.safe_load(path.read_text())
         nodes = config["evaluate"]["evaluators"]

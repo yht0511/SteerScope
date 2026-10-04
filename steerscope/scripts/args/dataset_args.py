@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 import argparse
 import yaml
+from steerscope.utils.api_clients import apply_api_model_overrides
 from typing import Optional, List, Type
 
 @dataclass
@@ -133,7 +134,7 @@ class DatasetArgs:
         config_file_path = args.config
         if config_file_path:
             with open(config_file_path, 'r') as file:
-                config = yaml.safe_load(file)
+                config = apply_api_model_overrides(yaml.safe_load(file) or {})
 
             # Select the specified section
             section_data = config.get(section, {})

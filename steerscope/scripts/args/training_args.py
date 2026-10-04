@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import argparse
 import sys
 import yaml
+from steerscope.utils.api_clients import apply_api_model_overrides
 from typing import Optional, List
 
 
@@ -209,7 +210,7 @@ class TrainingArgs:
         if not config_file_path:
             raise ValueError("A config file must be provided.")
         with open(config_file_path, 'r') as file:
-            config = yaml.safe_load(file)
+            config = apply_api_model_overrides(yaml.safe_load(file) or {})
 
         # Select the specified section
         section_data = config.get(section, {})

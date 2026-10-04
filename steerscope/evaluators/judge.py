@@ -162,7 +162,7 @@ class JudgeEvaluatorMixin:
                 key: sum(int(report.get(key, 0)) for report in reports)
                 for key in _COUNT_REPORT_FIELDS
             },
-            "total_price": sum(
+            "total_price": None if any(report.get("total_price") is None for report in reports) else sum(
                 float(report.get("total_price", 0.0))
                 for report in reports
             ),
@@ -292,7 +292,8 @@ class JudgeEvaluatorMixin:
         self._judge_progress_last_update = now
         progress_bar.set_postfix_str(
             " | ".join((
-                f"${float(report.get('total_price', 0.0)):.4f}",
+                ("cost unknown" if report.get("total_price") is None
+                 else f"${float(report['total_price']):.4f}"),
                 "judge="
                 f"{self._format_token_count(report.get('network_calls', 0))}",
                 "tok="
@@ -324,6 +325,7 @@ class JudgeEvaluatorMixin:
                 key: int(after.get(key, 0)) - int(before.get(key, 0))
                 for key in _COUNT_REPORT_FIELDS
             },
-            "total_price": float(after.get("total_price", 0.0))
+            "total_price": None if before.get("total_price") is None or after.get("total_price") is None
+            else float(after.get("total_price", 0.0))
             - float(before.get("total_price", 0.0)),
         }

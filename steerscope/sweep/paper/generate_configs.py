@@ -1241,6 +1241,39 @@ def write_model_layer(
         write_yaml(output_dir / filename, config)
 
 
+def ten_concept_configs() -> dict[str, dict]:
+    """Build the 21-method 2B/l20 suite without joint training or SFT."""
+    spec = MODEL_LAYERS["2b/l20"]
+    excluded = ALL_CONCEPT_METHODS | {"SFT"}
+    training = {
+        name: recipe for name, recipe in training_models(spec).items()
+        if name not in excluded
+    }
+    configs = {
+        filename: method_config(method, spec, training)
+        for method, filename in METHOD_FILES.items()
+        if method not in excluded
+    }
+    configs["generalization.yaml"] = generalization_config(spec, training)
+    configs["study.yaml"] = study_config(spec, training)
+    for filename, config in configs.items():
+        small = _ten_concept_profile(config)
+        evaluate = small["evaluate"]
+        evaluate["models"] = [name for name in evaluate["models"] if name not in excluded]
+        for node in evaluate["evaluators"].values():
+            if "models" in node:
+                node["models"] = [name for name in node["models"] if name not in excluded]
+            strengths = (node.get("inference") or {}).get("strengths_by_model")
+            if strengths is not None:
+                for name in excluded:
+                    strengths.pop(name, None)
+        if "study" in small:
+            small["study"]["concept_scopes"] = {"default": {"count": 10, "seed": 42}}
+            small["study"]["sample_efficiency"]["sizes"] = config["study"]["sample_efficiency"]["sizes"]
+        configs[filename] = small
+    return configs
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -1284,6 +1317,8 @@ def main() -> None:
         )
     for relative_dir, spec in MODEL_LAYERS.items():
         write_model_layer(relative_dir, spec, ROOT / relative_dir)
+    for filename, config in ten_concept_configs().items():
+        write_yaml(ROOT / "2b/l20_10concepts" / filename, config)
 
 
 if __name__ == "__main__":

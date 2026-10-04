@@ -28,6 +28,7 @@ from urllib.error import URLError
 from urllib.request import ProxyHandler, Request, build_opener
 
 import yaml
+from steerscope.utils.api_clients import apply_api_model_overrides
 from tqdm.auto import tqdm
 
 from steerscope.utils.training_seed import TRAINING_RECIPE_VERSION
@@ -94,7 +95,7 @@ def load_yaml(path: Path) -> dict[str, Any]:
         value = yaml.safe_load(file) or {}
     if not isinstance(value, dict):
         raise TypeError(f"YAML root must be a mapping: {path}")
-    return value
+    return apply_api_model_overrides(value)
 
 
 def atomic_yaml(path: Path, value: Mapping[str, Any]) -> None:

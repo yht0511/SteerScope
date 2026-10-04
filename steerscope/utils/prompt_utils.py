@@ -184,6 +184,39 @@ async def continue_with(client, tokenizer, content, length, api_tag=""):
     return continued_content
 
 
+async def _nonempty_training_answers(client, api_name, prompts, transform):
+    """Retry only invalid training answers, bypassing their cached responses."""
+    max_attempts = 3
+    pending = list(range(len(prompts)))
+    answers = [None] * len(prompts)
+    for attempt in range(max_attempts):
+        options = {"refresh_cache": True} if attempt else {}
+        responses = await client.chat_completions(
+            api_name, [prompts[index] for index in pending], **options
+        )
+        if len(responses) != len(pending):
+            raise ValueError(f"{api_name}: incomplete training-answer batch.")
+        retry = []
+        for index, response in zip(pending, responses):
+            answer = transform(index, response) if isinstance(response, str) else ""
+            if answer.strip():
+                answers[index] = answer
+            else:
+                retry.append(index)
+        if not retry:
+            return answers
+        pending = retry
+        if attempt + 1 < max_attempts:
+            logger.warning(
+                "%s: retrying %d empty training answers (%d/%d), bypassing cache.",
+                api_name, len(pending), attempt + 2, max_attempts,
+            )
+    raise ValueError(
+        f"{api_name}: empty training answers after {max_attempts} attempts; "
+        f"batch indices={pending}. No training pairs will be saved."
+    )
+
+
 async def continue_with_concept(client, tokenizer, concepts, content, length, api_tag=""):
     prompts = []
     content_token_lengths = []
@@ -192,15 +225,14 @@ async def continue_with_concept(client, tokenizer, concepts, content, length, ap
         content_token_lengths.append(len(content_tokens))
         prompts += [T_CONTINUE_WITH_CONCEPT.format(
             CONCEPT=concepts[i], CONTENT=c)]
-    responses = await client.chat_completions(f"{api_tag}.continue_with_concept", prompts)
-    continued_content = []
-    for i, response in enumerate(responses):
-        full_tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
-        # Skip the original content tokens and limit to requested length
-        continued_tokens = full_tokens[content_token_lengths[i]:content_token_lengths[i] + int(length)]
-        continued_text = tokenizer.convert_tokens_to_string(continued_tokens)
-        continued_content.append(continued_text)
-    return continued_content
+    def transform(index, response):
+        tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
+        offset = content_token_lengths[index]
+        return tokenizer.convert_tokens_to_string(tokens[offset:offset + int(length)])
+
+    return await _nonempty_training_answers(
+        client, f"{api_tag}.continue_with_concept", prompts, transform
+    )
 
 
 async def continue_without_concept(client, tokenizer, concepts, content, length, api_tag=""):
@@ -211,15 +243,14 @@ async def continue_without_concept(client, tokenizer, concepts, content, length,
         content_token_lengths.append(len(content_tokens))
         prompts += [T_CONTINUE_WITHOUT_CONCEPT.format(
             CONTENT=c, CONCEPT=concepts[i])]
-    responses = await client.chat_completions(f"{api_tag}.continue_without_concept", prompts)
-    continued_content = []
-    for i, response in enumerate(responses):
-        full_tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
-        # Skip the original content tokens and limit to requested length
-        continued_tokens = full_tokens[content_token_lengths[i]:content_token_lengths[i] + int(length)]
-        continued_text = tokenizer.convert_tokens_to_string(continued_tokens)
-        continued_content.append(continued_text)
-    return continued_content
+    def transform(index, response):
+        tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
+        offset = content_token_lengths[index]
+        return tokenizer.convert_tokens_to_string(tokens[offset:offset + int(length)])
+
+    return await _nonempty_training_answers(
+        client, f"{api_tag}.continue_without_concept", prompts, transform
+    )
 
 
 async def continue_with_polysemantic_concepts(
@@ -268,18 +299,15 @@ async def response_with_concept(client, tokenizer, concepts, content, length=Non
         content_token_lengths.append(len(content_tokens))
         prompts += [T_RESPONSE_WITH_CONCEPT.format(
             INSTRUCTION=c, CONCEPT=concepts[i])]
-    responses = await client.chat_completions(f"{api_tag}.response_with_concept", prompts)
-    if length is None:
-        return [response.strip() for response in responses]
+    def transform(index, response):
+        if length is None:
+            return response.strip()
+        tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
+        return tokenizer.convert_tokens_to_string(tokens[:int(length)])
 
-    response_content = []
-    for i, response in enumerate(responses):
-        full_tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
-        # Skip the original content tokens and limit to requested length
-        response_tokens = full_tokens[:int(length)]
-        response_text = tokenizer.convert_tokens_to_string(response_tokens)
-        response_content.append(response_text)
-    return response_content
+    return await _nonempty_training_answers(
+        client, f"{api_tag}.response_with_concept", prompts, transform
+    )
 
 
 async def response_without_concept(client, tokenizer, concepts, content, length=None, api_tag=""):
@@ -290,18 +318,15 @@ async def response_without_concept(client, tokenizer, concepts, content, length=
         content_token_lengths.append(len(content_tokens))
         prompts += [T_RESPONSE_WITHOUT_CONCEPT.format(
             INSTRUCTION=c, CONCEPT=concepts[i])]
-    responses = await client.chat_completions(f"{api_tag}.response_without_concept", prompts)
-    if length is None:
-        return [response.strip() for response in responses]
+    def transform(index, response):
+        if length is None:
+            return response.strip()
+        tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
+        return tokenizer.convert_tokens_to_string(tokens[:int(length)])
 
-    response_content = []
-    for i, response in enumerate(responses):
-        full_tokens = tokenizer.tokenize(response.strip(" '").strip('"'))
-        # Skip the original content tokens and limit to requested length
-        response_tokens = full_tokens[:int(length)]
-        response_text = tokenizer.convert_tokens_to_string(response_tokens)
-        response_content.append(response_text)
-    return response_content
+    return await _nonempty_training_answers(
+        client, f"{api_tag}.response_without_concept", prompts, transform
+    )
 
 
 async def response_with_polysemantic_concepts(

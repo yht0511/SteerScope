@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pandas as pd
 import yaml
+from steerscope.utils.api_clients import apply_api_model_overrides
 
 from steerscope.studies.training_data import (
     StudyVariant,
@@ -189,7 +190,7 @@ def main() -> None:
 
     config_path = Path(args.config).resolve()
     with config_path.open(encoding="utf-8") as file:
-        config = yaml.safe_load(file) or {}
+        config = apply_api_model_overrides(yaml.safe_load(file) or {})
     variants = build_study_variants(config)
 
     repo_root = Path(__file__).resolve().parents[2]

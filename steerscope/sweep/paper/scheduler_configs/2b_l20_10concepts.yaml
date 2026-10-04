@@ -1,0 +1,96 @@
+experiment:
+  model_key: 2b
+  layer: 20
+  config_dir: steerscope/sweep/paper/2b/l20_10concepts
+  output_dir: outputs/paper/2b/l20_10concepts
+runtime:
+  lm_cache_min_free_gb: 10
+easysteer:
+  enabled: true
+  gpus: [0, 1]
+  host: 127.0.0.1
+  port: 8017
+  tensor_parallel_size: 1
+  data_parallel_size: 2
+  gpu_memory_utilization: 0.25
+  allow_worker_overlap: true
+  enforce_eager: true
+  startup_timeout_seconds: 900
+  extra_args:
+  - --max-steer-vectors
+  - '32'
+  - --max-model-len
+  - '2048'
+  - --no-enable-chunked-prefill
+  - --no-enable-prefix-caching
+study:
+  enabled: true
+  gpus: []
+  nproc_per_node: 1
+  max_retries: 3
+  retry_delay_seconds: 30
+workers:
+  gpus: [0, 1]
+  safety_margin_gb: 6
+  retry_exclusive_on_oom: true
+scheduler:
+  resume: true
+  poll_interval_seconds: 10
+  max_concurrent_api_runs: 8
+methods:
+  defaults:
+    gpu_count: 1
+    nproc_per_node: 1
+    vram_reservation_gb: 14
+    exclusive_gpu: false
+    max_retries: 1
+  overrides:
+    LoRA:
+      vram_reservation_gb: 28
+      priority: 70
+    LoReFT:
+      vram_reservation_gb: 28
+      priority: 70
+    ODESteer:
+      vram_reservation_gb: 28
+      priority: 60
+    StepODESteer:
+      vram_reservation_gb: 28
+      priority: 60
+    HiDRA:
+      vram_reservation_gb: 24
+      priority: 50
+    GemmaScopeSAEMaxAUC:
+      vram_reservation_gb: 24
+      priority: 40
+    SPSR:
+      vram_reservation_gb: 14
+      priority: 30
+  exclude:
+  - FLAS
+  - HyperSteer
+  - SFT
+generalization:
+  enabled: true
+  gpus: []
+progress:
+  weights:
+    generate: 0.05
+    methods: 0.45
+    study: 0.35
+    generalization: 0.15
+wandb:
+  enabled: false
+  required: false
+  terminal: true
+  mode: online
+  project: steerscope-paper
+  name: steerscope-2b-l20-10concepts
+  run_id: steerscope-2b-l20-10concepts
+  group: gemma-2-2b-it
+  tags:
+  - steerscope
+  - paper
+  - 2b
+  - l20
+  html_interval_seconds: 60

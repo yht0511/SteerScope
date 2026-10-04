@@ -1,0 +1,215 @@
+generate:
+  lm_model: DeepSeek-V3.2-Instruct
+  output_length: 128
+  num_of_examples: 144
+  concept_path: steerscope/data/gemma-2-2b_20-gemmascope-res-16k.json
+  max_concepts: 10
+  api_concurrency: 64
+  dataset_category: instruction
+  master_data_dir: steerscope/data
+  seed: 42
+  keep_legacy_output_format: true
+train:
+  model_name: google/gemma-2-2b-it
+  layer: 20
+  component: res
+  output_length: 128
+  seed: 42
+  use_bf16: true
+  models:
+    LoReFT:
+      batch_size: 3
+      gradient_accumulation_steps: 12
+      n_epochs: 24
+      lr: 0.0009
+      weight_decay: 0.0
+      low_rank_dimension: 4
+      reft_layers:
+      - 5
+      - 10
+      - 15
+      - 20
+      reft_positions: f5+l5
+      reft_type: Loreft
+      binarize_dataset: false
+      train_on_negative: false
+      exclude_bos: true
+evaluate:
+  use_bf16: true
+  generate_reports: false
+  evaluation_run_id: loreft
+  models:
+  - LoReFT
+  model_name: google/gemma-2-2b-it
+  output_length: 128
+  steering_intervention_type: addition
+  steering_model_name: google/gemma-2-2b-it
+  steering_batch_size: 10
+  steering_output_length: 128
+  steering_layers:
+  - 20
+  runtime_backend: legacy
+  easysteer_url: http://127.0.0.1:8017
+  easysteer_timeout: 180
+  master_data_dir: steerscope/data
+  seed: 42
+  lm_model: gpt-4o-mini
+  temperature: 1.0
+  evaluators:
+    mmlu:
+      type: MMLUEvaluator
+      report:
+        enabled: true
+      dataset:
+        type: MMLU_test
+        split: all
+        num_examples: 20
+        seed: 42
+      inference:
+        strengths:
+        - 1.0
+        batch_size: 8
+        output_length: 1
+        temperature: 1.0
+    bbq:
+      type: BBQEvaluator
+      report:
+        enabled: true
+      dataset:
+        type: BBQ
+        split: all
+        num_examples: 20
+        seed: 42
+      inference:
+        strengths:
+        - 1.0
+        batch_size: 8
+        output_length: 1
+        temperature: 1.0
+    truthfulqa:
+      type: TruthfulQAEvaluator
+      report:
+        enabled: true
+      dataset:
+        type: TruthfulQA_binary
+        split: all
+        num_examples: 20
+        seed: 42
+      inference:
+        strengths:
+        - 1.0
+        batch_size: 8
+        output_length: 1
+        temperature: 1.0
+    superglue:
+      type: SuperGLUEEvaluator
+      report:
+        enabled: true
+      dataset:
+        type: SuperGLUE
+        split: all
+        tasks:
+        - boolq
+        - cb
+        - copa
+        - multirc
+        - record
+        - rte
+        - wic
+        - wsc
+        num_examples_per_task: 20
+        seed: 42
+      inference:
+        strengths:
+        - 1.0
+        batch_size: 4
+        output_length: 1
+        temperature: 1.0
+    math:
+      type: MATHEvaluator
+      report:
+        enabled: true
+      dataset:
+        type: MATH
+        split: all
+        num_examples: 20
+        seed: 42
+        levels:
+        - 1
+      inference:
+        strengths:
+        - 1.0
+        batch_size: 20
+        output_length: 1024
+        temperature: 1.0
+        runtime_backend: auto
+    math_output_length:
+      type: OutputLengthEvaluator
+      depends_on:
+      - math
+      report:
+        enabled: true
+      input:
+        from: math
+        kind: inference
+    ifeval:
+      type: IFEvalEvaluator
+      report:
+        enabled: true
+      dataset:
+        type: IFEval
+        split: all
+        num_examples: 20
+        seed: 42
+      inference:
+        strengths:
+        - 1.0
+        batch_size: 20
+        output_length: 1024
+        temperature: 1.0
+        runtime_backend: auto
+    jailbreakbench:
+      type: JailBreakBenchEvaluator
+      report:
+        enabled: true
+      params:
+        harmful_judge_model_name: meta-llama/Llama-3.1-8B-Instruct
+        benign_judge_model_name: meta-llama/Llama-3.1-8B-Instruct
+        harmful_judge_batch_size: 64
+        benign_judge_batch_size: 64
+        judge_max_new_tokens: 4
+        judge_dtype: bfloat16
+      dataset:
+        type: JailBreakBench
+        split: all
+        num_examples: 20
+        seed: 42
+      inference:
+        strengths:
+        - 1.0
+        batch_size: 20
+        output_length: 150
+        temperature: 1.0
+        runtime_backend: auto
+    id_lm_judge:
+      type: LMJudgeEvaluator
+      report:
+        enabled: true
+      params:
+        judge_concurrency: 8
+        judge_pipeline_enabled: true
+        include_baseline: true
+        baseline_factor: 0.0
+      dataset:
+        type: AlpacaEval
+        split: all
+        num_examples: 10
+        seed: 42
+      inference:
+        strengths_by_model:
+          LoReFT:
+          - 1.0
+        batch_size: 10
+        output_length: 128
+        temperature: 1.0
+        do_sample: true

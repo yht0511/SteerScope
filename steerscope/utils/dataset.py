@@ -200,6 +200,11 @@ class DatasetFactory(object):
         for pair_id, (prompt, positive_output, negative_output) in enumerate(
             zip(paired_content, positive_outputs, negative_outputs)
         ):
+            for label, answer in (("positive", positive_output), ("negative", negative_output)):
+                if not isinstance(answer, str) or not answer.strip():
+                    raise ValueError(
+                        f"Empty {label} training answer: concept={concept!r}, pair_id={pair_id}."
+                    )
             all_examples += [[
                 prompt, positive_output, concept, genre, "positive",
                 self.dataset_category, pair_id, source_indices[pair_id],

@@ -71,9 +71,10 @@ def validate() -> list[str]:
     if profiles != {"2b/l10", "2b/l20", "9b/l20", "9b/l31"}:
         errors.append(f"Unexpected generator profiles: {sorted(profiles)}")
 
-    for relative, spec in sorted(generator.MODEL_LAYERS.items()):
+    suites = {name: _expected_suite(spec) for name, spec in generator.MODEL_LAYERS.items()}
+    suites["2b/l20_10concepts"] = generator.ten_concept_configs()
+    for relative, expected in sorted(suites.items()):
         directory = ROOT / relative
-        expected = _expected_suite(spec)
         actual_names = {path.name for path in directory.glob("*.yaml")}
         if actual_names != set(expected):
             errors.append(
@@ -111,7 +112,7 @@ def validate() -> list[str]:
                 errors.append(f"{relative}/{filename}: expected 14 factors, got {len(factors)}")
 
     expected_scheduler_names = {
-        f"{profile.replace('/', '_')}.yaml" for profile in profiles
+        f"{profile.replace('/', '_')}.yaml" for profile in suites
     }
     actual_scheduler_names = {
         path.name for path in SCHEDULER_DIR.glob("*.yaml")
@@ -122,14 +123,14 @@ def validate() -> list[str]:
             f"missing={sorted(expected_scheduler_names - actual_scheduler_names)}, "
             f"extra={sorted(actual_scheduler_names - expected_scheduler_names)}"
         )
-    for profile in sorted(profiles):
+    for profile in sorted(suites):
         path = SCHEDULER_DIR / f"{profile.replace('/', '_')}.yaml"
         if not path.is_file():
             continue
         config = _load(path)
         experiment = config.get("experiment", {})
         model_key, layer_name = profile.split("/")
-        expected_layer = int(layer_name.removeprefix("l"))
+        expected_layer = int(layer_name.split("_")[0].removeprefix("l"))
         if experiment.get("model_key") != model_key:
             errors.append(f"{path.name}: wrong model_key")
         if experiment.get("layer") != expected_layer:
@@ -155,7 +156,7 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print("Validated four paper profiles, 104 experiment YAMLs, and 4 scheduler YAMLs.")
+    print("Validated four paper profiles and the 10-concept suite: 127 experiment YAMLs and 5 scheduler YAMLs.")
     return 0
 
 

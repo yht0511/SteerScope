@@ -85,6 +85,8 @@ class LanguageModelStats(object):
         self.total_cache_hit = 0
 
     def get_total_price(self):
+        if self.model not in PRICING_DOLLAR_PER_1M_TOKEN:
+            return None
         input_tokens, output_tokens = self.get_total_tokens()
         input_price = (input_tokens/UNIT_1M)*\
             PRICING_DOLLAR_PER_1M_TOKEN[self.model]["input"]
@@ -95,7 +97,8 @@ class LanguageModelStats(object):
     def print_report(self):
         logger.warning("="*20)
         logger.warning(f"Total calls: {self.total_call}, Total cache hits: {self.total_cache_hit}")
-        logger.warning(f"Total price: ${self.get_total_price()}")
+        price = self.get_total_price()
+        logger.warning("Total price: %s", "unknown" if price is None else f"${price}")
         logger.warning("="*20)
 
     def get_report(self):
@@ -188,7 +191,7 @@ class LanguageModel(object):
             )
 
     def normalize(self, text):
-        return text.strip()
+        return "" if text is None else text.strip()
 
     def _get_cache_key(self, prompt, api_count, api_name):
         # Versioned keys do not accept legacy entries with unknown sampling settings.
