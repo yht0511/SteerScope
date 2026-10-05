@@ -1,0 +1,908 @@
+{
+  "schema_version": 1,
+  "figure": "study__sample_efficiency__overall",
+  "title": "",
+  "xlabel": "",
+  "ylabel": "",
+  "panels": [
+    {
+      "title": "",
+      "output_key": "9b/l20",
+      "annotations": [],
+      "xlabel": "Examples per Concept",
+      "ylabel": "Overall Harmonic Effect ↑",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -0.9000000000000004,
+        150.9
+      ],
+      "ylim": [
+        -0.06118,
+        1.19238
+      ],
+      "reference_lines": [],
+      "data": [
+        {
+          "kind": "line",
+          "x": "train_examples",
+          "y": "score",
+          "points": [
+            {
+              "method": "APSR",
+              "train_examples": 6,
+              "score": 0.2144,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 12,
+              "score": 0.6688000000000001,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 36,
+              "score": 1.0053999999999998,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 72,
+              "score": 1.086,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 144,
+              "score": 1.1354,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 6,
+              "score": 0.1928,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 12,
+              "score": 0.21059999999999998,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 36,
+              "score": 0.2352,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 72,
+              "score": 0.2792,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 144,
+              "score": 0.28859999999999997,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 6,
+              "score": 0.06280000000000001,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 12,
+              "score": 0.0636,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 36,
+              "score": 0.34259999999999996,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 72,
+              "score": 0.6705999999999999,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 144,
+              "score": 0.8065999999999999,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 6,
+              "score": -0.004199999999999997,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 12,
+              "score": 0.009400000000000006,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 36,
+              "score": 0.08439999999999999,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 72,
+              "score": 0.0904,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 144,
+              "score": 0.1112,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 6,
+              "score": 0.6394000000000001,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 12,
+              "score": 0.6922000000000001,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 36,
+              "score": 0.7612000000000001,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 72,
+              "score": 0.7317999999999999,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 144,
+              "score": 0.7709999999999998,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 6,
+              "score": 0.17,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 12,
+              "score": 0.1246,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 36,
+              "score": 0.16899999999999998,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 72,
+              "score": 0.1846,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 144,
+              "score": 0.196,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 6,
+              "score": 0.0388,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 12,
+              "score": 0.08539999999999999,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 36,
+              "score": 0.1898,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 72,
+              "score": 0.3354,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 144,
+              "score": 0.5002,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 6,
+              "score": 0.3824,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 12,
+              "score": 0.4756,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 36,
+              "score": 0.6534,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 72,
+              "score": 0.7106,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 144,
+              "score": 0.7599999999999999,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 6,
+              "score": 0.013000000000000001,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 12,
+              "score": 0.09760000000000002,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 36,
+              "score": 0.2518,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 72,
+              "score": 0.3434,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 144,
+              "score": 0.4182,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 6,
+              "score": 0.3504,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 12,
+              "score": 0.4428000000000001,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 36,
+              "score": 0.6466,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 72,
+              "score": 0.7152,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 144,
+              "score": 0.7894000000000001,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 6,
+              "score": 1.0577999999999999,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 12,
+              "score": 1.1266,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 36,
+              "score": 1.1086,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 72,
+              "score": 1.0886,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 144,
+              "score": 1.1016000000000001,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 6,
+              "score": 0.03500000000000001,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 12,
+              "score": 0.187,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 36,
+              "score": 0.5225000000000001,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 72,
+              "score": 0.5455,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 144,
+              "score": 0.538,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 6,
+              "score": 0.0020000000000000018,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 12,
+              "score": 0.1198,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 36,
+              "score": 0.6794,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 72,
+              "score": 0.7153999999999999,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 144,
+              "score": 0.8532,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 6,
+              "score": 1.078,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 12,
+              "score": 1.0758,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 36,
+              "score": 1.0652000000000001,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 72,
+              "score": 1.0652000000000001,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 144,
+              "score": 1.0466,
+              "method_display_name": "Simple Prompt Steering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "",
+      "output_key": "9b/l20",
+      "annotations": [],
+      "xlabel": "Examples per Concept",
+      "ylabel": "Relative Overall Effect (%) ↑",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -0.9000000000000004,
+        150.9
+      ],
+      "ylim": [
+        -9.115836892878205,
+        108.33904957058623
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 100
+        }
+      ],
+      "data": [
+        {
+          "kind": "line",
+          "x": "train_examples",
+          "y": "relative_improvement_pct",
+          "points": [
+            {
+              "method": "APSR",
+              "train_examples": 6,
+              "relative_improvement_pct": 18.883212964593977,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 12,
+              "relative_improvement_pct": 58.90435088955435,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 36,
+              "relative_improvement_pct": 88.5502906464682,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 72,
+              "relative_improvement_pct": 95.64911044565793,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 6,
+              "relative_improvement_pct": 66.80526680526681,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 12,
+              "relative_improvement_pct": 72.97297297297298,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 36,
+              "relative_improvement_pct": 81.4968814968815,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 72,
+              "relative_improvement_pct": 96.74289674289676,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 6,
+              "relative_improvement_pct": 7.785767418794944,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 12,
+              "relative_improvement_pct": 7.884949169352841,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 36,
+              "relative_improvement_pct": 42.474584676419546,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 72,
+              "relative_improvement_pct": 83.13910240515744,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 6,
+              "relative_improvement_pct": -3.7769784172661844,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 12,
+              "relative_improvement_pct": 8.453237410071948,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 36,
+              "relative_improvement_pct": 75.89928057553956,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 72,
+              "relative_improvement_pct": 81.29496402877697,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 6,
+              "relative_improvement_pct": 82.93125810635541,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 12,
+              "relative_improvement_pct": 89.77950713359277,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 36,
+              "relative_improvement_pct": 98.72892347600522,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 72,
+              "relative_improvement_pct": 94.91569390402077,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 6,
+              "relative_improvement_pct": 86.73469387755102,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 12,
+              "relative_improvement_pct": 63.57142857142858,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 36,
+              "relative_improvement_pct": 86.22448979591836,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 72,
+              "relative_improvement_pct": 94.18367346938774,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 6,
+              "relative_improvement_pct": 7.756897241103559,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 12,
+              "relative_improvement_pct": 17.073170731707314,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 36,
+              "relative_improvement_pct": 37.94482207117154,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 72,
+              "relative_improvement_pct": 67.0531787285086,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 6,
+              "relative_improvement_pct": 50.31578947368422,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 12,
+              "relative_improvement_pct": 62.57894736842106,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 36,
+              "relative_improvement_pct": 85.97368421052633,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 72,
+              "relative_improvement_pct": 93.50000000000001,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 6,
+              "relative_improvement_pct": 3.1085604973696794,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 12,
+              "relative_improvement_pct": 23.33811573409852,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 36,
+              "relative_improvement_pct": 60.21042563366811,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 72,
+              "relative_improvement_pct": 82.11382113821136,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 6,
+              "relative_improvement_pct": 44.388142893336706,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 12,
+              "relative_improvement_pct": 56.09323536863441,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 36,
+              "relative_improvement_pct": 81.91031162908537,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 72,
+              "relative_improvement_pct": 90.60045604256396,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 6,
+              "relative_improvement_pct": 96.02396514161218,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 12,
+              "relative_improvement_pct": 102.26942628903413,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 36,
+              "relative_improvement_pct": 100.63543936092954,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 72,
+              "relative_improvement_pct": 98.81989832970224,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 6,
+              "relative_improvement_pct": 6.50557620817844,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 12,
+              "relative_improvement_pct": 34.75836431226765,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 36,
+              "relative_improvement_pct": 97.1189591078067,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 72,
+              "relative_improvement_pct": 101.39405204460965,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 6,
+              "relative_improvement_pct": 0.23441162681669034,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 12,
+              "relative_improvement_pct": 14.04125644631974,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 36,
+              "relative_improvement_pct": 79.62962962962963,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 72,
+              "relative_improvement_pct": 83.84903891233004,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 6,
+              "relative_improvement_pct": 103.00019109497421,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 12,
+              "relative_improvement_pct": 102.78998662335182,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 36,
+              "relative_improvement_pct": 101.77718326008028,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 72,
+              "relative_improvement_pct": 101.77718326008028,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 144,
+              "relative_improvement_pct": 100.0,
+              "method_display_name": "Simple Prompt Steering"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

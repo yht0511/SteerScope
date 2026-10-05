@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "figure": "prompt_generalization__overall_harmonic_retention__overall__filtered",
+  "title": "",
+  "xlabel": "",
+  "ylabel": "",
+  "panels": [
+    {
+      "title": "",
+      "output_key": "2b/l20",
+      "annotations": [],
+      "xlabel": "ID Overall Harmonic Effect ↑",
+      "ylabel": "OOD / ID Overall Retention ↑",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        0.16123200000000001,
+        1.0046680000000001
+      ],
+      "ylim": [
+        0.36788903892912933,
+        1.060340207670345
+      ],
+      "reference_lines": [],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "id_overall_effect",
+          "y": "overall_harmonic_retention",
+          "points": [
+            {
+              "method": "APSR",
+              "factor": 2.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.9465,
+              "overall_harmonic_retention": 0.9156629688325411,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "PromptSteering",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.8441,
+              "overall_harmonic_retention": 1.002635943608577,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "LoRA",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.7981999999999999,
+              "overall_harmonic_retention": 0.9211350538712104,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.8769,
+              "overall_harmonic_retention": 0.7908541452845249,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.6007,
+              "overall_harmonic_retention": 0.9834776094556351,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "factor": 1.0,
+              "n_concepts": 13,
+              "id_overall_effect": 0.7249999999999999,
+              "overall_harmonic_retention": 0.6823607427055705,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 14.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.6329,
+              "overall_harmonic_retention": 0.5731553167957022,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.5838,
+              "overall_harmonic_retention": 0.5745118191161357,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.449,
+              "overall_harmonic_retention": 0.6579621380846324,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "FLAS",
+              "factor": 2.5,
+              "n_concepts": 50,
+              "id_overall_effect": 0.6152,
+              "overall_harmonic_retention": 0.4255933029908973,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "SPSR",
+              "factor": 4.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.32049999999999995,
+              "overall_harmonic_retention": 0.8156006240249611,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 2.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.35869999999999996,
+              "overall_harmonic_retention": 0.5731112350153332,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.8,
+              "n_concepts": 50,
+              "id_overall_effect": 0.2194,
+              "overall_harmonic_retention": 0.461485870556062,
+              "method_display_name": "DiffMean"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

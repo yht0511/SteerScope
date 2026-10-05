@@ -1,0 +1,2710 @@
+{
+  "schema_version": 1,
+  "figure": "composite_side_effect__2b_9b_shared_legend",
+  "title": "",
+  "xlabel": "",
+  "ylabel": "",
+  "panels": [
+    {
+      "title": "Gemma-2-2B · L20",
+      "output_key": "2b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "Concept Expression ↑",
+      "ylabel": "Mean Side Effect ↓",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -0.056575000000000014,
+        1.575175
+      ],
+      "ylim": [
+        -0.06656219237895158,
+        0.47363952279940863
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "APSR",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0086,
+              "side_effect_mean": -0.03456742924726765,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0106,
+              "side_effect_mean": -0.037892488090777304,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0358,
+              "side_effect_mean": -0.0364195190814001,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.2026,
+              "side_effect_mean": -0.027067958235567645,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.4694,
+              "side_effect_mean": -0.0014109713993656,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.7002,
+              "side_effect_mean": 0.02481327383155811,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.8877999999999999,
+              "side_effect_mean": 0.05035191839380603,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 1.0176,
+              "side_effect_mean": 0.07177086897359387,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 1.1188,
+              "side_effect_mean": 0.0916606808472494,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 1.198,
+              "side_effect_mean": 0.10801014332439615,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 1.3222,
+              "side_effect_mean": 0.14790203014528086,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 1.4094,
+              "side_effect_mean": 0.17990754977484083,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 1.4522,
+              "side_effect_mean": 0.2308933601365104,
+              "method_display_name": "A-PSR"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "DiffMean",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.009,
+              "side_effect_mean": 0.013484818138064791,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0438,
+              "side_effect_mean": 0.00928541209869433,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.121,
+              "side_effect_mean": 0.025885378761762258,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.295,
+              "side_effect_mean": 0.06125939876505893,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.488,
+              "side_effect_mean": 0.10567675044724147,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.6186,
+              "side_effect_mean": 0.15649845167310805,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.6916,
+              "side_effect_mean": 0.19892330689753168,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.7424,
+              "side_effect_mean": 0.21502875686167355,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.7696000000000001,
+              "side_effect_mean": 0.22089194905841616,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8038,
+              "side_effect_mean": 0.22619957259832474,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.8346,
+              "side_effect_mean": 0.2375870131120893,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8488,
+              "side_effect_mean": 0.24678139083560122,
+              "method_display_name": "DiffMean"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "FLAS",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.1502,
+              "side_effect_mean": -0.02126640261439298,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 1.5,
+              "n_concepts": 500,
+              "effect_mean": 0.4152,
+              "side_effect_mean": 0.01928224646376157,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6792,
+              "side_effect_mean": 0.06175051723233233,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.8468,
+              "side_effect_mean": 0.0927911986837109,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.9296,
+              "side_effect_mean": 0.11658122903709094,
+              "method_display_name": "FLAS"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0009999999999999987,
+              "side_effect_mean": 0.0012579616254696589,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.002799999999999999,
+              "side_effect_mean": 0.011057416210183022,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.011399999999999999,
+              "side_effect_mean": 0.012846510773180846,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.0202,
+              "side_effect_mean": 0.016528420835783715,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0298,
+              "side_effect_mean": 0.01904087170842377,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0506,
+              "side_effect_mean": 0.02718728688849039,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0712,
+              "side_effect_mean": 0.04485726228378777,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.089,
+              "side_effect_mean": 0.050297962133658294,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.111,
+              "side_effect_mean": 0.0606551321579063,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.12179999999999999,
+              "side_effect_mean": 0.07987455907430886,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.16140000000000002,
+              "side_effect_mean": 0.11953452255328893,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.186,
+              "side_effect_mean": 0.16300465310444043,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2068,
+              "side_effect_mean": 0.2205092704515397,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.24680000000000002,
+              "side_effect_mean": 0.24873086042117165,
+              "method_display_name": "SAE"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.001199999999999999,
+              "side_effect_mean": -0.029452138164944807,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.006799999999999999,
+              "side_effect_mean": -0.027708452495941557,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.016,
+              "side_effect_mean": -0.0227438500787026,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.0248,
+              "side_effect_mean": -0.02401399836399372,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.040600000000000004,
+              "side_effect_mean": -0.021019591184842097,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0592,
+              "side_effect_mean": -0.01041143632985062,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.07640000000000001,
+              "side_effect_mean": -0.0006010699276933564,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.09539999999999998,
+              "side_effect_mean": 0.01628642695269709,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.1192,
+              "side_effect_mean": 0.031412448189183255,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.1446,
+              "side_effect_mean": 0.05439716229067053,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.1666,
+              "side_effect_mean": 0.1160229934156352,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.18619999999999998,
+              "side_effect_mean": 0.16742116466146417,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2036,
+              "side_effect_mean": 0.24015324332986576,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2144,
+              "side_effect_mean": 0.28384843125077874,
+              "method_display_name": "SAE-A"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "HyperSteer",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0118,
+              "side_effect_mean": -0.03979544072596978,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0272,
+              "side_effect_mean": -0.03730354671947342,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0824,
+              "side_effect_mean": -0.020123509878335534,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.2612,
+              "side_effect_mean": -0.003555625762951176,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6172000000000001,
+              "side_effect_mean": 0.05674517326800306,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.9272,
+              "side_effect_mean": 0.12990117240574103,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 1.1004,
+              "side_effect_mean": 0.19624288115597655,
+              "method_display_name": "HyperSteer"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "LAT",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.007399999999999999,
+              "side_effect_mean": -0.01263708548514238,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.014199999999999999,
+              "side_effect_mean": 0.008835633768934571,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0624,
+              "side_effect_mean": 0.03283317429035952,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.18619999999999998,
+              "side_effect_mean": 0.07316537509468626,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.3718,
+              "side_effect_mean": 0.14093193155050626,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.48960000000000004,
+              "side_effect_mean": 0.19162535682759713,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.54,
+              "side_effect_mean": 0.21893284680030034,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.5776,
+              "side_effect_mean": 0.24017531710791673,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.6006,
+              "side_effect_mean": 0.2550362666277927,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "LAT",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6096,
+              "side_effect_mean": 0.2626772685623895,
+              "method_display_name": "LAT"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "LoRA",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.7842,
+              "side_effect_mean": 0.02911601380584576,
+              "method_display_name": "LoRA"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "LoReFT",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.9178,
+              "side_effect_mean": 0.07215130216126087,
+              "method_display_name": "LoReFT"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "LsReFT",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.013399999999999999,
+              "side_effect_mean": -0.0016130542681308576,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.035,
+              "side_effect_mean": 0.0006704778763228724,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.08940000000000001,
+              "side_effect_mean": 0.014752606298424035,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.238,
+              "side_effect_mean": 0.02276368225994012,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.49660000000000004,
+              "side_effect_mean": 0.0411004385351421,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.758,
+              "side_effect_mean": 0.09785864376740278,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.88,
+              "side_effect_mean": 0.1300045440697874,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.9162,
+              "side_effect_mean": 0.1666832127618327,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.9328,
+              "side_effect_mean": 0.19870568134449867,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.9472,
+              "side_effect_mean": 0.22594064207414621,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 1.009,
+              "side_effect_mean": 0.25342179303551826,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 1.0512000000000001,
+              "side_effect_mean": 0.2700620142630605,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 1.0982,
+              "side_effect_mean": 0.24641174076670921,
+              "method_display_name": "ReFT-r1"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "PCA",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.007,
+              "side_effect_mean": -0.01862395922197207,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.02,
+              "side_effect_mean": -0.0005816000554874645,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0586,
+              "side_effect_mean": 0.013550308328491438,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.1778,
+              "side_effect_mean": 0.06219676680047628,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.36119999999999997,
+              "side_effect_mean": 0.12581053298899902,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.4978,
+              "side_effect_mean": 0.17970367758320877,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.5614,
+              "side_effect_mean": 0.21598285915437312,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.6066,
+              "side_effect_mean": 0.24006115896765146,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.6174,
+              "side_effect_mean": 0.2522234633964795,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6317999999999999,
+              "side_effect_mean": 0.2623973996195383,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "PCA",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.6357999999999999,
+              "side_effect_mean": 0.274358531164561,
+              "method_display_name": "PCA"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "PreferenceVector",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0162,
+              "side_effect_mean": -0.03333326171959702,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0354,
+              "side_effect_mean": -0.02808526468755921,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 6.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0824,
+              "side_effect_mean": -0.025166346124194824,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 8.0,
+              "n_concepts": 500,
+              "effect_mean": 0.1664,
+              "side_effect_mean": -0.012630946937027931,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 10.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2988,
+              "side_effect_mean": 0.006336679713639465,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 12.0,
+              "n_concepts": 500,
+              "effect_mean": 0.49660000000000004,
+              "side_effect_mean": 0.04016443626997835,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 14.0,
+              "n_concepts": 500,
+              "effect_mean": 0.719,
+              "side_effect_mean": 0.08065347247543662,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 16.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8924,
+              "side_effect_mean": 0.12414974527394142,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 18.0,
+              "n_concepts": 500,
+              "effect_mean": 1.017,
+              "side_effect_mean": 0.16152722635007602,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 20.0,
+              "n_concepts": 500,
+              "effect_mean": 1.1108,
+              "side_effect_mean": 0.19506826188113904,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 25.0,
+              "n_concepts": 500,
+              "effect_mean": 1.1585999999999999,
+              "side_effect_mean": 0.2631026038820945,
+              "method_display_name": "RePS"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "PromptSteering",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8926000000000001,
+              "side_effect_mean": 0.006397801559485055,
+              "method_display_name": "Prompt Steering"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SFT",
+              "factor": 1.0,
+              "n_concepts": 20,
+              "effect_mean": 1.025,
+              "side_effect_mean": 0.19562259946894558,
+              "method_display_name": "SFT"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SPSR",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0007999999999999992,
+              "side_effect_mean": -0.034039863577012386,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": -0.0008000000000000006,
+              "side_effect_mean": -0.036619413472207755,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0056,
+              "side_effect_mean": -0.035767651042715225,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.012999999999999998,
+              "side_effect_mean": -0.035276523948733346,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.012199999999999999,
+              "side_effect_mean": -0.03946316093897678,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.017,
+              "side_effect_mean": -0.03595527998750776,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.031599999999999996,
+              "side_effect_mean": -0.03552901198512179,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.039799999999999995,
+              "side_effect_mean": -0.03560315280272215,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.061200000000000004,
+              "side_effect_mean": -0.030749806483010515,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0888,
+              "side_effect_mean": -0.030716497553539425,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.1698,
+              "side_effect_mean": -0.01972425197495742,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2872,
+              "side_effect_mean": 0.004799440696369305,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.5066,
+              "side_effect_mean": 0.06910550151480042,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6226,
+              "side_effect_mean": 0.13804947937462134,
+              "method_display_name": "S-PSR"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SimplePromptSteering",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.803,
+              "side_effect_mean": 0.04596528107969005,
+              "method_display_name": "Simple Prompt Steering"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SteeringVector",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0031999999999999997,
+              "side_effect_mean": 0.004316292943027244,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.010199999999999999,
+              "side_effect_mean": 0.028643338315807818,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.025,
+              "side_effect_mean": 0.014651960603901988,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.0434,
+              "side_effect_mean": 0.012992624185617857,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0874,
+              "side_effect_mean": 0.021525602265815406,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.141,
+              "side_effect_mean": 0.015219337935518119,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.218,
+              "side_effect_mean": 0.027133154388452086,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.2936,
+              "side_effect_mean": 0.043254754914485376,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.3832,
+              "side_effect_mean": 0.054570597536694535,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.4756,
+              "side_effect_mean": 0.08771750542161212,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.6527999999999999,
+              "side_effect_mean": 0.14674312111887713,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.7412000000000001,
+              "side_effect_mean": 0.19884255590713087,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8316,
+              "side_effect_mean": 0.24192715482502855,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8687999999999999,
+              "side_effect_mean": 0.27273005477652495,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Gemma-2-9B · L20",
+      "output_key": "9b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "Concept Expression ↑",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -0.056575000000000014,
+        1.575175
+      ],
+      "ylim": [
+        -0.06656219237895158,
+        0.47363952279940863
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "APSR",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.003800000000000001,
+              "side_effect_mean": -0.002229815863420918,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0158,
+              "side_effect_mean": -0.005168857410328753,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0646,
+              "side_effect_mean": -0.011978676933269438,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.3442,
+              "side_effect_mean": -0.004623429047381282,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6456000000000001,
+              "side_effect_mean": 0.00669787716982429,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.855,
+              "side_effect_mean": 0.02407580231709761,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 1.0062,
+              "side_effect_mean": 0.04111093147278371,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 1.0966,
+              "side_effect_mean": 0.054692328901899366,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 1.1688,
+              "side_effect_mean": 0.06927668549667045,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 1.2204000000000002,
+              "side_effect_mean": 0.08554705920914134,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 1.3008,
+              "side_effect_mean": 0.1173189543519897,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 1.3582,
+              "side_effect_mean": 0.15108858070635678,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 1.434,
+              "side_effect_mean": 0.19648551399797134,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "APSR",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 1.4698,
+              "side_effect_mean": 0.2391729219792154,
+              "method_display_name": "A-PSR"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "DiffMean",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.011800000000000001,
+              "side_effect_mean": -0.010234714696847365,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.019,
+              "side_effect_mean": -0.00518120219499664,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.049800000000000004,
+              "side_effect_mean": 0.009438389801424751,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.09659999999999999,
+              "side_effect_mean": 0.03254743595178645,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.23,
+              "side_effect_mean": 0.07228160938007296,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.37360000000000004,
+              "side_effect_mean": 0.12316618909108015,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.5086,
+              "side_effect_mean": 0.1841279123084285,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.5744,
+              "side_effect_mean": 0.24916636849169202,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.6456000000000001,
+              "side_effect_mean": 0.296558352933429,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6894,
+              "side_effect_mean": 0.33144275330919376,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.757,
+              "side_effect_mean": 0.3789719304667486,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8032,
+              "side_effect_mean": 0.4030357417159484,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.8528,
+              "side_effect_mean": 0.43012663250088196,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.9022,
+              "side_effect_mean": 0.4468727711464268,
+              "method_display_name": "DiffMean"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "FLAS",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.7243999999999999,
+              "side_effect_mean": 0.15144822536142344,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 1.5,
+              "n_concepts": 500,
+              "effect_mean": 0.9882000000000001,
+              "side_effect_mean": 0.1760030480142639,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "FLAS",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.9972000000000001,
+              "side_effect_mean": 0.15509441801760215,
+              "method_display_name": "FLAS"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0036,
+              "side_effect_mean": -0.0004764522956539412,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0008000000000000003,
+              "side_effect_mean": -0.002128601336284331,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": -0.00019999999999999958,
+              "side_effect_mean": 0.002906791139526167,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.007000000000000001,
+              "side_effect_mean": -0.0014173208419841375,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.006,
+              "side_effect_mean": 0.002595811056076127,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0128,
+              "side_effect_mean": 0.010234862020186981,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0246,
+              "side_effect_mean": 0.020156093307127244,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.041,
+              "side_effect_mean": 0.020890850947342502,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.0536,
+              "side_effect_mean": 0.03520824167593771,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.06520000000000001,
+              "side_effect_mean": 0.038751386675408575,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.10540000000000001,
+              "side_effect_mean": 0.061743191560730847,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.15159999999999998,
+              "side_effect_mean": 0.10211869851894444,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.199,
+              "side_effect_mean": 0.17440056967060763,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2548,
+              "side_effect_mean": 0.22642754824893363,
+              "method_display_name": "SAE"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 4.440892098500626e-19,
+              "side_effect_mean": 0.002893692681379135,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0030000000000000014,
+              "side_effect_mean": -6.703598650496227e-05,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0044,
+              "side_effect_mean": -0.0023037837854854634,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.0088,
+              "side_effect_mean": 0.004111779096427798,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0102,
+              "side_effect_mean": 0.005636024290154362,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0228,
+              "side_effect_mean": 0.015456557741222093,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0298,
+              "side_effect_mean": 0.018812896448317594,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0424,
+              "side_effect_mean": 0.023968987213133654,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.055,
+              "side_effect_mean": 0.032716051271515494,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.07160000000000001,
+              "side_effect_mean": 0.0352430572386135,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.1098,
+              "side_effect_mean": 0.05939062390307443,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.1502,
+              "side_effect_mean": 0.08473064625526497,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.1998,
+              "side_effect_mean": 0.13123424539614217,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2196,
+              "side_effect_mean": 0.18633485974371364,
+              "method_display_name": "SAE-A"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "HiDRA",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 0.12,
+              "n_concepts": 500,
+              "effect_mean": 0.004200000000000001,
+              "side_effect_mean": 0.0023410232142244765,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 0.24,
+              "n_concepts": 500,
+              "effect_mean": 0.0044,
+              "side_effect_mean": -0.0017276832272451464,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 0.36,
+              "n_concepts": 500,
+              "effect_mean": 0.006200000000000001,
+              "side_effect_mean": -0.002840918690728667,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 0.5,
+              "n_concepts": 500,
+              "effect_mean": 0.0104,
+              "side_effect_mean": 0.0005014819210708272,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0164,
+              "side_effect_mean": 0.00400656016930505,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 0.72,
+              "n_concepts": 500,
+              "effect_mean": 0.0228,
+              "side_effect_mean": 0.006551958161873706,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 0.84,
+              "n_concepts": 500,
+              "effect_mean": 0.0234,
+              "side_effect_mean": 0.011890182606273326,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0384,
+              "side_effect_mean": 0.021689515284539912,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0478,
+              "side_effect_mean": 0.03486212314136564,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 1.5,
+              "n_concepts": 500,
+              "effect_mean": 0.0824,
+              "side_effect_mean": 0.06562739223848223,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.115,
+              "side_effect_mean": 0.11189866237516469,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.1638,
+              "side_effect_mean": 0.15402686823659392,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 2.4,
+              "n_concepts": 500,
+              "effect_mean": 0.22740000000000002,
+              "side_effect_mean": 0.23036538580625054,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.3018,
+              "side_effect_mean": 0.3398004147912192,
+              "method_display_name": "HiDRA"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "HyperSteer",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0132,
+              "side_effect_mean": -0.0032575481792431154,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.031,
+              "side_effect_mean": -0.004267464265080508,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.1108,
+              "side_effect_mean": 0.003522702923166546,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.4444,
+              "side_effect_mean": 0.04303432359649396,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 1.0132,
+              "side_effect_mean": 0.13964708143895524,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 1.3605999999999998,
+              "side_effect_mean": 0.2548343102447887,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 1.4926,
+              "side_effect_mean": 0.33845120766694786,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 1.5218,
+              "side_effect_mean": 0.3940588256199216,
+              "method_display_name": "HyperSteer"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "LoRA",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.584,
+              "side_effect_mean": 0.050622673940722215,
+              "method_display_name": "LoRA"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "LoReFT",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 1.0094,
+              "side_effect_mean": 0.1361400200216928,
+              "method_display_name": "LoReFT"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "LsReFT",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.006,
+              "side_effect_mean": -0.0016204557046053814,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0072,
+              "side_effect_mean": 0.005823981068243115,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0296,
+              "side_effect_mean": 0.008681697567952534,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.0892,
+              "side_effect_mean": 0.028978497321230454,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.225,
+              "side_effect_mean": 0.05744484411110797,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.445,
+              "side_effect_mean": 0.1059605450748553,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.7196,
+              "side_effect_mean": 0.1580992878419525,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.9174,
+              "side_effect_mean": 0.20802275877181756,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 1.06,
+              "side_effect_mean": 0.26328083083030146,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 1.1198,
+              "side_effect_mean": 0.30219240286251003,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 1.1578,
+              "side_effect_mean": 0.3767958175918365,
+              "method_display_name": "ReFT-r1"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "PreferenceVector",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0184,
+              "side_effect_mean": 0.001419401594920088,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.073,
+              "side_effect_mean": 0.013245898528896953,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 6.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2898,
+              "side_effect_mean": 0.04043343674114582,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 8.0,
+              "n_concepts": 500,
+              "effect_mean": 0.6788,
+              "side_effect_mean": 0.09068993913792506,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 10.0,
+              "n_concepts": 500,
+              "effect_mean": 0.9428,
+              "side_effect_mean": 0.14624220774744745,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 12.0,
+              "n_concepts": 500,
+              "effect_mean": 1.1124,
+              "side_effect_mean": 0.1931280028939579,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 14.0,
+              "n_concepts": 500,
+              "effect_mean": 1.2192,
+              "side_effect_mean": 0.22947532582223948,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 16.0,
+              "n_concepts": 500,
+              "effect_mean": 1.2964,
+              "side_effect_mean": 0.26207910998626277,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 18.0,
+              "n_concepts": 500,
+              "effect_mean": 1.3718,
+              "side_effect_mean": 0.2893491787462458,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 20.0,
+              "n_concepts": 500,
+              "effect_mean": 1.4342000000000001,
+              "side_effect_mean": 0.32014417499681025,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 25.0,
+              "n_concepts": 500,
+              "effect_mean": 1.496,
+              "side_effect_mean": 0.38628691951062705,
+              "method_display_name": "RePS"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "PromptSteering",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 1.1296,
+              "side_effect_mean": 0.03525179486260455,
+              "method_display_name": "Prompt Steering"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SFT",
+              "factor": 1.0,
+              "n_concepts": 20,
+              "effect_mean": 0.76,
+              "side_effect_mean": 0.24993531800710908,
+              "method_display_name": "SFT"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SPSR",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0022,
+              "side_effect_mean": -0.0025088389363205417,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0062,
+              "side_effect_mean": -0.009029123654040643,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0158,
+              "side_effect_mean": -0.012095501090300597,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.058,
+              "side_effect_mean": -0.008826080930467429,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.1726,
+              "side_effect_mean": -0.009937449547747203,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.3182,
+              "side_effect_mean": -0.00955509936778307,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.4664,
+              "side_effect_mean": 0.005148177574000979,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.6086,
+              "side_effect_mean": 0.015649550324352394,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.7298,
+              "side_effect_mean": 0.03545933368250403,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.843,
+              "side_effect_mean": 0.05574658585268217,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 1.0042,
+              "side_effect_mean": 0.11024796101089102,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 1.1194000000000002,
+              "side_effect_mean": 0.16762901187472293,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SPSR",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 1.1825999999999999,
+              "side_effect_mean": 0.2504868351012295,
+              "method_display_name": "S-PSR"
+            }
+          ]
+        },
+        {
+          "kind": "scatter",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SimplePromptSteering",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 1.466,
+              "side_effect_mean": 0.1409245149940802,
+              "method_display_name": "Simple Prompt Steering"
+            }
+          ]
+        },
+        {
+          "kind": "line",
+          "x": "effect_mean",
+          "y": "side_effect_mean",
+          "points": [
+            {
+              "method": "SteeringVector",
+              "factor": 0.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0,
+              "side_effect_mean": 0.0,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.2,
+              "n_concepts": 500,
+              "effect_mean": 0.006600000000000001,
+              "side_effect_mean": -0.0016007372446664309,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0044,
+              "side_effect_mean": -0.001518837791223994,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.6,
+              "n_concepts": 500,
+              "effect_mean": -0.0031999999999999997,
+              "side_effect_mean": -0.0007034093391213476,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 0.8,
+              "n_concepts": 500,
+              "effect_mean": 0.004600000000000001,
+              "side_effect_mean": 0.0075074056272800005,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.0,
+              "n_concepts": 500,
+              "effect_mean": 0.004,
+              "side_effect_mean": 0.016275303558501538,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.2,
+              "n_concepts": 500,
+              "effect_mean": 0.0036000000000000003,
+              "side_effect_mean": 0.02692036564892013,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.4,
+              "n_concepts": 500,
+              "effect_mean": 0.0074,
+              "side_effect_mean": 0.042826449663384274,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.6,
+              "n_concepts": 500,
+              "effect_mean": 0.0176,
+              "side_effect_mean": 0.0669641825579108,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 1.8,
+              "n_concepts": 500,
+              "effect_mean": 0.017,
+              "side_effect_mean": 0.09408598282391883,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 2.0,
+              "n_concepts": 500,
+              "effect_mean": 0.0268,
+              "side_effect_mean": 0.11587757770034815,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 2.5,
+              "n_concepts": 500,
+              "effect_mean": 0.053,
+              "side_effect_mean": 0.17450369184247472,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 3.0,
+              "n_concepts": 500,
+              "effect_mean": 0.10679999999999999,
+              "side_effect_mean": 0.23070711321003798,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 4.0,
+              "n_concepts": 500,
+              "effect_mean": 0.211,
+              "side_effect_mean": 0.31615035490823673,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 5.0,
+              "n_concepts": 500,
+              "effect_mean": 0.2876,
+              "side_effect_mean": 0.37723206375474766,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

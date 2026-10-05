@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "figure": "prompt_generalization__overall_harmonic_retention__overall__filtered",
+  "title": "",
+  "xlabel": "",
+  "ylabel": "",
+  "panels": [
+    {
+      "title": "",
+      "output_key": "9b/l20",
+      "annotations": [],
+      "xlabel": "ID Overall Harmonic Effect ↑",
+      "ylabel": "OOD / ID Overall Retention ↑",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        0.020112000000000005,
+        1.265488
+      ],
+      "ylim": [
+        0.5483355886083567,
+        1.2887255539787965
+      ],
+      "reference_lines": [],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "id_overall_effect",
+          "y": "overall_harmonic_retention",
+          "points": [
+            {
+              "method": "APSR",
+              "factor": 2.5,
+              "n_concepts": 50,
+              "id_overall_effect": 1.1796,
+              "overall_harmonic_retention": 0.9609189555781621,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "PromptSteering",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 1.028,
+              "overall_harmonic_retention": 0.9508998054474708,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SPSR",
+              "factor": 2.5,
+              "n_concepts": 50,
+              "id_overall_effect": 0.9345,
+              "overall_harmonic_retention": 0.9307383627608348,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.9845999999999999,
+              "overall_harmonic_retention": 0.860857200893764,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "LoReFT",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.9166,
+              "overall_harmonic_retention": 0.7966943050403666,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.9125,
+              "overall_harmonic_retention": 0.7648767123287672,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 12.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.8789,
+              "overall_harmonic_retention": 0.7648481055865286,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "LoRA",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.69,
+              "overall_harmonic_retention": 0.9416666666666667,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "FLAS",
+              "factor": 2.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.8542000000000001,
+              "overall_harmonic_retention": 0.6983142121283071,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "SFT",
+              "factor": 1.0,
+              "n_concepts": 15,
+              "id_overall_effect": 0.5916666666666667,
+              "overall_harmonic_retention": 0.8346478873239436,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.6,
+              "n_concepts": 50,
+              "id_overall_effect": 0.5755,
+              "overall_harmonic_retention": 0.6100347523892268,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.2,
+              "n_concepts": 50,
+              "id_overall_effect": 0.34630000000000005,
+              "overall_harmonic_retention": 0.8792954086052555,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "LinearProbe",
+              "factor": 5.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.2122,
+              "overall_harmonic_retention": 1.2270263901979266,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "LAT",
+              "factor": 5.0,
+              "n_concepts": 50,
+              "id_overall_effect": 0.106,
+              "overall_harmonic_retention": 1.0221698113207547,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 2.4,
+              "n_concepts": 50,
+              "id_overall_effect": 0.1207,
+              "overall_harmonic_retention": 0.6143330571665285,
+              "method_display_name": "HiDRA"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

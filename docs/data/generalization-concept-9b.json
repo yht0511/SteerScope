@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "figure": "prompt_generalization__concept_retention__overall__filtered",
+  "title": "",
+  "xlabel": "",
+  "ylabel": "",
+  "panels": [
+    {
+      "title": "",
+      "output_key": "9b/l20",
+      "annotations": [],
+      "xlabel": "ID Concept Expression Improvement ↑",
+      "ylabel": "OOD / ID Concept Retention ↑",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        0.00040000000000001146,
+        1.5606
+      ],
+      "ylim": [
+        0.7285991140642303,
+        2.427270210409745
+      ],
+      "reference_lines": [],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "id_concept_effect",
+          "y": "concept_retention",
+          "points": [
+            {
+              "method": "APSR",
+              "factor": 2.5,
+              "n_concepts": 50,
+              "id_concept_effect": 1.41,
+              "concept_retention": 1.0072695035460995,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "PromptSteering",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_concept_effect": 1.084,
+              "concept_retention": 0.9990774907749076,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SPSR",
+              "factor": 2.5,
+              "n_concepts": 50,
+              "id_concept_effect": 1.2229999999999999,
+              "concept_retention": 0.9421504497138186,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_concept_effect": 1.453,
+              "concept_retention": 1.002752924982794,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "LoReFT",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_concept_effect": 1.225,
+              "concept_retention": 0.9199999999999999,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "HyperSteer",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_concept_effect": 1.246,
+              "concept_retention": 1.0565810593900482,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "PreferenceVector",
+              "factor": 12.0,
+              "n_concepts": 50,
+              "id_concept_effect": 1.3869999999999998,
+              "concept_retention": 0.9635904830569576,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "LoRA",
+              "factor": 1.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.8190000000000001,
+              "concept_retention": 1.2078754578754578,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "FLAS",
+              "factor": 2.0,
+              "n_concepts": 50,
+              "id_concept_effect": 1.15,
+              "concept_retention": 0.8791304347826087,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "SFT",
+              "factor": 1.0,
+              "n_concepts": 15,
+              "id_concept_effect": 0.86,
+              "concept_retention": 0.8701550387596899,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "LsReFT",
+              "factor": 1.6,
+              "n_concepts": 50,
+              "id_concept_effect": 1.2409999999999999,
+              "concept_retention": 0.9961724415793717,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "DiffMean",
+              "factor": 1.2,
+              "n_concepts": 50,
+              "id_concept_effect": 0.457,
+              "concept_retention": 1.1728665207877462,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "LinearProbe",
+              "factor": 5.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.23399999999999999,
+              "concept_retention": 1.4807692307692308,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "PCA",
+              "factor": 5.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.11900000000000001,
+              "concept_retention": 2.2857142857142856,
+              "method_display_name": "PCA"
+            },
+            {
+              "method": "LAT",
+              "factor": 5.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.145,
+              "concept_retention": 1.7862068965517244,
+              "method_display_name": "LAT"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "factor": 3.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.19899999999999998,
+              "concept_retention": 1.3379396984924623,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "factor": 3.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.19,
+              "concept_retention": 1.3342105263157895,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "HiDRA",
+              "factor": 2.4,
+              "n_concepts": 50,
+              "id_concept_effect": 0.266,
+              "concept_retention": 1.0657894736842106,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "SteeringVector",
+              "factor": 3.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.193,
+              "concept_retention": 0.8860103626943006,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "StepODESteer",
+              "factor": 290.0,
+              "n_concepts": 50,
+              "id_concept_effect": 0.10800000000000001,
+              "concept_retention": 0.909722222222222,
+              "method_display_name": "StepODESteer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

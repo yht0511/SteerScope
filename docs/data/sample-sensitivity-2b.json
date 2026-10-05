@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "figure": "study__sample_sensitivity__overall",
+  "title": "",
+  "xlabel": "",
+  "ylabel": "",
+  "panels": [
+    {
+      "title": "",
+      "output_key": "2b/l20",
+      "annotations": [
+        "24 examples/concept"
+      ],
+      "xlabel": "Overall Improvement (mean ± mean concept seed SD)",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -0.05230162566892553,
+        0.8251857916985202
+      ],
+      "ylim": [
+        -0.6000000000000001,
+        12.6
+      ],
+      "reference_lines": [],
+      "data": [
+        {
+          "kind": "errorbar",
+          "x": "score_mean",
+          "y": "method",
+          "x_sd": "score_std",
+          "points": [
+            {
+              "method": "DiffMean",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.02648,
+              "score_std": 0.03889583397040527,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.05261999999999999,
+              "score_std": 0.04854355145798368,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "SteeringVector",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.06698,
+              "score_std": 0.06194376987935698,
+              "method_display_name": "SSV"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.10336000000000001,
+              "score_std": 0.06309188350843284,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.12822,
+              "score_std": 0.08017257413895412,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.20221999999999998,
+              "score_std": 0.08037012572215907,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.25136,
+              "score_std": 0.09241070770486592,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 24,
+              "n_concepts": 20,
+              "score_mean": 0.37465000000000004,
+              "score_std": 0.1613441618676909,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.39202,
+              "score_std": 0.09966789615088906,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.53416,
+              "score_std": 0.12370249297117365,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.6198,
+              "score_std": 0.0,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.62752,
+              "score_std": 0.11909840380424801,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.7853,
+              "score_std": 0.0,
+              "method_display_name": "Prompt Steering"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

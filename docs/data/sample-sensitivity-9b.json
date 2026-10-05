@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "figure": "study__sample_sensitivity__overall",
+  "title": "",
+  "xlabel": "",
+  "ylabel": "",
+  "panels": [
+    {
+      "title": "",
+      "output_key": "9b/l20",
+      "annotations": [
+        "24 examples/concept"
+      ],
+      "xlabel": "Overall Improvement (mean ± mean concept seed SD)",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -0.09999147993586187,
+        1.1174376895207554
+      ],
+      "ylim": [
+        -0.65,
+        13.65
+      ],
+      "reference_lines": [],
+      "data": [
+        {
+          "kind": "errorbar",
+          "x": "score_mean",
+          "y": "method",
+          "x_sd": "score_std",
+          "points": [
+            {
+              "method": "HiDRA",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.027360000000000002,
+              "score_std": 0.07201379041510654,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "LoRA",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.09478,
+              "score_std": 0.05375171433449716,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LinearProbe",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.14164,
+              "score_std": 0.0821344373021579,
+              "method_display_name": "Linear Probe"
+            },
+            {
+              "method": "FLAS",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.17085999999999998,
+              "score_std": 0.09327520000659309,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "DiffMean",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.20855999999999997,
+              "score_std": 0.08213973349514486,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "LsReFT",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.23248000000000002,
+              "score_std": 0.1568192301817544,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "SFT",
+              "train_examples": 24,
+              "n_concepts": 20,
+              "score_mean": 0.3197,
+              "score_std": 0.13443787370464047,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.46944,
+              "score_std": 0.10883327786860651,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "PreferenceVector",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.5833999999999999,
+              "score_std": 0.1148153276509972,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "LoReFT",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.58668,
+              "score_std": 0.12209553929535875,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "HyperSteer",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.71422,
+              "score_std": 0.09823772120947913,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "APSR",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 0.9142999999999999,
+              "score_std": 0.11684898492725174,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 1.0605,
+              "score_std": 0.0,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "PromptSteering",
+              "train_examples": 24,
+              "n_concepts": 50,
+              "score_mean": 1.0621,
+              "score_std": 0.0,
+              "method_display_name": "Prompt Steering"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

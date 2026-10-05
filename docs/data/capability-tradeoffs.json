@@ -1,0 +1,1005 @@
+{
+  "schema_version": 1,
+  "figure": "side_effect_capabilities__best_factor",
+  "title": "",
+  "xlabel": "Concept Expression Gain (pp)",
+  "ylabel": "Metric Degradation (pp)",
+  "panels": [
+    {
+      "title": "Knowledge (MMLU)",
+      "output_key": "9b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -4.577999999999999,
+        80.878
+      ],
+      "ylim": [
+        -3.1400999999999923,
+        38.0301
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "effect_percent",
+          "y": "side_effect_percent",
+          "points": [
+            {
+              "method": "APSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 500,
+              "effect_percent": 65.03999999999999,
+              "side_effect_percent": 34.89,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "normalized_factor": 0.24,
+              "n_concepts": 500,
+              "effect_percent": 18.680000000000003,
+              "side_effect_percent": 16.09,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "normalized_factor": 0.6666666666666666,
+              "n_concepts": 500,
+              "effect_percent": 49.86000000000001,
+              "side_effect_percent": 29.460000000000004,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "normalized_factor": 0.6,
+              "n_concepts": 500,
+              "effect_percent": 7.579999999999999,
+              "side_effect_percent": 13.84,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "normalized_factor": 0.6,
+              "n_concepts": 500,
+              "effect_percent": 7.51,
+              "side_effect_percent": 10.75,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "HiDRA",
+              "normalized_factor": 0.7999999999999999,
+              "n_concepts": 500,
+              "effect_percent": 11.370000000000001,
+              "side_effect_percent": 30.010000000000005,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "normalized_factor": 0.2,
+              "n_concepts": 500,
+              "effect_percent": 50.660000000000004,
+              "side_effect_percent": 18.419999999999998,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LoRA",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 29.2,
+              "side_effect_percent": 4.79,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 50.470000000000006,
+              "side_effect_percent": 23.09,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "normalized_factor": 0.32,
+              "n_concepts": 500,
+              "effect_percent": 45.87,
+              "side_effect_percent": 28.92,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "normalized_factor": 0.24,
+              "n_concepts": 500,
+              "effect_percent": 55.620000000000005,
+              "side_effect_percent": 22.41,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 56.48,
+              "side_effect_percent": 31.139999999999997,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 20,
+              "effect_percent": 38.0,
+              "side_effect_percent": 19.5,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 500,
+              "effect_percent": 50.21,
+              "side_effect_percent": 25.069999999999997,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 73.3,
+              "side_effect_percent": 23.150000000000002,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SteeringVector",
+              "normalized_factor": 0.6,
+              "n_concepts": 500,
+              "effect_percent": 5.34,
+              "side_effect_percent": 32.72,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Math Reasoning (MATH)",
+      "output_key": "9b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -4.577999999999999,
+        80.878
+      ],
+      "ylim": [
+        -6.705000000000015,
+        81.205
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "effect_percent",
+          "y": "side_effect_percent",
+          "points": [
+            {
+              "method": "APSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 64.0,
+              "side_effect_percent": 13.100000000000001,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 17.5,
+              "side_effect_percent": 48.5,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "normalized_factor": 0.6666666666666665,
+              "n_concepts": 50,
+              "effect_percent": 55.39999999999999,
+              "side_effect_percent": 21.8,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 7.9,
+              "side_effect_percent": 34.6,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 8.3,
+              "side_effect_percent": 24.4,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "HiDRA",
+              "normalized_factor": 0.8,
+              "n_concepts": 50,
+              "effect_percent": 11.7,
+              "side_effect_percent": 66.9,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "normalized_factor": 0.2,
+              "n_concepts": 50,
+              "effect_percent": 50.9,
+              "side_effect_percent": 52.400000000000006,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LoRA",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 30.099999999999998,
+              "side_effect_percent": 11.599999999999998,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 49.4,
+              "side_effect_percent": 30.2,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "normalized_factor": 0.32,
+              "n_concepts": 50,
+              "effect_percent": 49.2,
+              "side_effect_percent": 70.0,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 56.89999999999999,
+              "side_effect_percent": 67.7,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 57.70000000000001,
+              "side_effect_percent": 5.1,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 20,
+              "effect_percent": 38.0,
+              "side_effect_percent": 74.5,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 51.5,
+              "side_effect_percent": 17.1,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 76.3,
+              "side_effect_percent": 23.2,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SteeringVector",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 5.1,
+              "side_effect_percent": 73.8,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Instruction Following (IFEval)",
+      "output_key": "9b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -4.577999999999999,
+        80.878
+      ],
+      "ylim": [
+        -4.860000000000015,
+        58.86
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "effect_percent",
+          "y": "side_effect_percent",
+          "points": [
+            {
+              "method": "APSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 64.0,
+              "side_effect_percent": 15.899999999999997,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 17.5,
+              "side_effect_percent": 24.099999999999998,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "normalized_factor": 0.6666666666666665,
+              "n_concepts": 50,
+              "effect_percent": 55.39999999999999,
+              "side_effect_percent": 8.9,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 7.9,
+              "side_effect_percent": 15.2,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 8.3,
+              "side_effect_percent": 13.699999999999998,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "HiDRA",
+              "normalized_factor": 0.8,
+              "n_concepts": 50,
+              "effect_percent": 11.7,
+              "side_effect_percent": 40.0,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "normalized_factor": 0.2,
+              "n_concepts": 50,
+              "effect_percent": 50.9,
+              "side_effect_percent": 19.2,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LoRA",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 30.099999999999998,
+              "side_effect_percent": 10.4,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 49.4,
+              "side_effect_percent": 21.799999999999997,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "normalized_factor": 0.32,
+              "n_concepts": 50,
+              "effect_percent": 49.2,
+              "side_effect_percent": 28.000000000000004,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 56.89999999999999,
+              "side_effect_percent": 28.599999999999998,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 57.70000000000001,
+              "side_effect_percent": 4.299999999999999,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 20,
+              "effect_percent": 38.0,
+              "side_effect_percent": 54.0,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 51.5,
+              "side_effect_percent": 6.299999999999999,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 76.3,
+              "side_effect_percent": 2.099999999999999,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SteeringVector",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 5.1,
+              "side_effect_percent": 29.7,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jailbreak Safety (JBB)",
+      "output_key": "9b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -4.577999999999999,
+        80.878
+      ],
+      "ylim": [
+        -5.431526315789473,
+        47.42626315789473
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "effect_percent",
+          "y": "side_effect_percent",
+          "points": [
+            {
+              "method": "APSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 64.0,
+              "side_effect_percent": 20.900000000000002,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 17.5,
+              "side_effect_percent": 2.0999999999999996,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "normalized_factor": 0.6666666666666665,
+              "n_concepts": 50,
+              "effect_percent": 55.39999999999999,
+              "side_effect_percent": 43.39473684210526,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 7.9,
+              "side_effect_percent": 2.9000000000000004,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 8.3,
+              "side_effect_percent": 5.6000000000000005,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "HiDRA",
+              "normalized_factor": 0.8,
+              "n_concepts": 50,
+              "effect_percent": 11.7,
+              "side_effect_percent": 15.0,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "normalized_factor": 0.2,
+              "n_concepts": 50,
+              "effect_percent": 50.9,
+              "side_effect_percent": 24.178947368421053,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LoRA",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 30.099999999999998,
+              "side_effect_percent": 5.2,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 49.4,
+              "side_effect_percent": 35.2,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "normalized_factor": 0.32,
+              "n_concepts": 50,
+              "effect_percent": 49.2,
+              "side_effect_percent": 19.9,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 56.89999999999999,
+              "side_effect_percent": 29.5,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 57.70000000000001,
+              "side_effect_percent": -1.4,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 20,
+              "effect_percent": 38.0,
+              "side_effect_percent": 43.0,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 51.5,
+              "side_effect_percent": 20.4,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 76.3,
+              "side_effect_percent": 22.473684210526315,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SteeringVector",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 5.1,
+              "side_effect_percent": 30.0,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Language Understanding (SuperGLUE)",
+      "output_key": "9b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -4.577999999999999,
+        80.878
+      ],
+      "ylim": [
+        -1.1785315476388627,
+        14.273326521403998
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "effect_percent",
+          "y": "side_effect_percent",
+          "points": [
+            {
+              "method": "APSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 64.0,
+              "side_effect_percent": 5.6876574566434135,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 17.5,
+              "side_effect_percent": 5.244207989088167,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "normalized_factor": 0.6666666666666665,
+              "n_concepts": 50,
+              "effect_percent": 55.39999999999999,
+              "side_effect_percent": 11.618993972275165,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 7.9,
+              "side_effect_percent": 5.508673321443826,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 8.3,
+              "side_effect_percent": 3.7500615072891574,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "HiDRA",
+              "normalized_factor": 0.8,
+              "n_concepts": 50,
+              "effect_percent": 11.7,
+              "side_effect_percent": 9.498041080639378,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "normalized_factor": 0.2,
+              "n_concepts": 50,
+              "effect_percent": 50.9,
+              "side_effect_percent": 9.955143083495312,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LoRA",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 30.099999999999998,
+              "side_effect_percent": 2.361932399285508,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 49.4,
+              "side_effect_percent": 5.005560126282516,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "normalized_factor": 0.32,
+              "n_concepts": 50,
+              "effect_percent": 49.2,
+              "side_effect_percent": 10.668852889582265,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "normalized_factor": 0.24,
+              "n_concepts": 50,
+              "effect_percent": 56.89999999999999,
+              "side_effect_percent": 9.885518304833521,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 57.70000000000001,
+              "side_effect_percent": 2.335109824500491,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 20,
+              "effect_percent": 38.0,
+              "side_effect_percent": 13.094794973765136,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 50,
+              "effect_percent": 51.5,
+              "side_effect_percent": 10.334342503712566,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 50,
+              "effect_percent": 76.3,
+              "side_effect_percent": 9.848441290620926,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SteeringVector",
+              "normalized_factor": 0.6,
+              "n_concepts": 50,
+              "effect_percent": 5.1,
+              "side_effect_percent": 9.89901770061728,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Truthfulness (TruthfulQA)",
+      "output_key": "9b/l20",
+      "annotations": [
+        "Better ↘"
+      ],
+      "xlabel": "",
+      "ylabel": "",
+      "xscale": "linear",
+      "yscale": "linear",
+      "xlim": [
+        -4.577999999999999,
+        80.878
+      ],
+      "ylim": [
+        -2.399400000000001,
+        29.0594
+      ],
+      "reference_lines": [
+        {
+          "axis": "y",
+          "value": 0
+        },
+        {
+          "axis": "x",
+          "value": 0
+        }
+      ],
+      "data": [
+        {
+          "kind": "scatter",
+          "x": "effect_percent",
+          "y": "side_effect_percent",
+          "points": [
+            {
+              "method": "APSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 500,
+              "effect_percent": 65.03999999999999,
+              "side_effect_percent": 19.05,
+              "method_display_name": "A-PSR"
+            },
+            {
+              "method": "DiffMean",
+              "normalized_factor": 0.24,
+              "n_concepts": 500,
+              "effect_percent": 18.680000000000003,
+              "side_effect_percent": 6.3,
+              "method_display_name": "DiffMean"
+            },
+            {
+              "method": "FLAS",
+              "normalized_factor": 0.6666666666666666,
+              "n_concepts": 500,
+              "effect_percent": 49.86000000000001,
+              "side_effect_percent": 18.769999999999996,
+              "method_display_name": "FLAS"
+            },
+            {
+              "method": "GemmaScopeSAE",
+              "normalized_factor": 0.6,
+              "n_concepts": 500,
+              "effect_percent": 7.579999999999999,
+              "side_effect_percent": 5.91,
+              "method_display_name": "SAE"
+            },
+            {
+              "method": "GemmaScopeSAEMaxAUC",
+              "normalized_factor": 0.6,
+              "n_concepts": 500,
+              "effect_percent": 7.51,
+              "side_effect_percent": 4.68,
+              "method_display_name": "SAE-A"
+            },
+            {
+              "method": "HiDRA",
+              "normalized_factor": 0.7999999999999999,
+              "n_concepts": 500,
+              "effect_percent": 11.370000000000001,
+              "side_effect_percent": 13.96,
+              "method_display_name": "HiDRA"
+            },
+            {
+              "method": "HyperSteer",
+              "normalized_factor": 0.2,
+              "n_concepts": 500,
+              "effect_percent": 50.660000000000004,
+              "side_effect_percent": 8.93,
+              "method_display_name": "HyperSteer"
+            },
+            {
+              "method": "LoRA",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 29.2,
+              "side_effect_percent": 5.209999999999999,
+              "method_display_name": "LoRA"
+            },
+            {
+              "method": "LoReFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 50.470000000000006,
+              "side_effect_percent": 12.98,
+              "method_display_name": "LoReFT"
+            },
+            {
+              "method": "LsReFT",
+              "normalized_factor": 0.32,
+              "n_concepts": 500,
+              "effect_percent": 45.87,
+              "side_effect_percent": 10.08,
+              "method_display_name": "ReFT-r1"
+            },
+            {
+              "method": "PreferenceVector",
+              "normalized_factor": 0.24,
+              "n_concepts": 500,
+              "effect_percent": 55.620000000000005,
+              "side_effect_percent": 9.229999999999999,
+              "method_display_name": "RePS"
+            },
+            {
+              "method": "PromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 56.48,
+              "side_effect_percent": 3.9799999999999995,
+              "method_display_name": "Prompt Steering"
+            },
+            {
+              "method": "SFT",
+              "normalized_factor": 1.0,
+              "n_concepts": 20,
+              "effect_percent": 38.0,
+              "side_effect_percent": 26.0,
+              "method_display_name": "SFT"
+            },
+            {
+              "method": "SPSR",
+              "normalized_factor": 0.5,
+              "n_concepts": 500,
+              "effect_percent": 50.21,
+              "side_effect_percent": 17.849999999999998,
+              "method_display_name": "S-PSR"
+            },
+            {
+              "method": "SimplePromptSteering",
+              "normalized_factor": 1.0,
+              "n_concepts": 500,
+              "effect_percent": 73.3,
+              "side_effect_percent": 26.66,
+              "method_display_name": "Simple Prompt Steering"
+            },
+            {
+              "method": "SteeringVector",
+              "normalized_factor": 0.6,
+              "n_concepts": 500,
+              "effect_percent": 5.34,
+              "side_effect_percent": 13.319999999999999,
+              "method_display_name": "SSV"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,158 +1,99 @@
-# SteerScope
+# SteerScope: A Holistic Evaluation Suite for LLM Steering
 
-Official code for the anonymous ICLR 2027 submission **“Does Steering Break Your Model? A Multi-Dimensional Evaluation Suite for LLM Steering Methods.”**
+*Official code for the paper **“Does Steering Break Your Model? A Multi-Dimensional Evaluation Suite for LLM Steering Methods.”***
 
-SteerScope is an evaluation suite for language-model steering. It measures target efficacy, behavioral side effects, generalization, and dependence on training data under a shared experimental protocol. This repository contains the method implementations, evaluators, formal experiment configurations, scheduler, and analysis notebook used by the paper.
+<a href="https://arxiv.org/abs/2610.07722"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?logo=arxiv&logoColor=white" alt="Paper"></a>
+<a href="https://yht0511.github.io/SteerScope/"><img src="https://img.shields.io/badge/Project-Page-4C72B0?logo=googlechrome&logoColor=white" alt="Project Page"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/Code%20License-Apache%202.0-2F80ED" alt="Code License: Apache 2.0"></a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white" alt="Python 3.12"></a>
 
-> This repository is anonymized for double-blind review. Author and paper links will be added after the review period.
+SteerScope is a comprehensive, multi-dimensional evaluation suite for LLM steering, organized around two questions: **what steering changes** and **when those changes hold**. It evaluates target efficacy, side effects, generalization, and training-data dependence while characterizing efficacy–side-effect trade-offs across steering strengths.
 
-## Setup
+<p align="center">
+  <img src="docs/assets/evaluation-overview.svg" alt="SteerScope evaluation suite" width="100%">
+</p>
 
-The experiments require Linux, NVIDIA GPUs, Git, and access to the gated Gemma 2 weights on Hugging Face. Jailbreak Safety evaluation also requires access to `meta-llama/Llama-3.1-8B-Instruct`. SteerScope uses Python 3.12; the pinned EasySteer runtime is installed in a separate Python 3.10 environment.
+## Coverage
+
+- **15 metrics** for efficacy, language quality, task capability, safety, generalization, and data dependence
+- **23 methods and baselines**, plus a random control
+- **500 concepts** from the GemmaScope concept vocabulary
+- **Gemma-2-2B-it** and **Gemma-2-9B-it**
+- Resumable generation, training, evaluation, and analysis
+
+| Family | Methods |
+|---|---|
+| Optimization-free | DiffMean, PCA, LAT, Spherical Steering, HiDRA, AUSteer, SAE, SAE-A |
+| Directly optimized | Linear Probe, SSV, ReFT-r1, LoReFT, A-PSR, S-PSR, RePS, ODESteer, StepODESteer |
+| Hypernetwork-based | HyperSteer, FLAS |
+| Baselines | Prompt Steering, Simple Prompt Steering, LoRA, SFT |
+
+## Results
+
+<p align="center">
+  <img src="docs/assets/composite-tradeoff.svg" alt="Composite efficacy-side-effect trade-offs at layer 20 on Gemma-2-2B-it and Gemma-2-9B-it" width="100%">
+</p>
+
+Across both model scales, no evaluated activation-steering method achieves higher target efficacy than Prompt Steering without greater composite side effects.
+
+[Explore the project website →](https://yht0511.github.io/SteerScope/#results)
+
+## Quick start
+
+SteerScope requires Linux, NVIDIA GPUs, Python 3.12, and access to the gated Gemma 2 weights. Jailbreak evaluation also requires `meta-llama/Llama-3.1-8B-Instruct`.
 
 ```bash
-curl -fL \
-  https://anonymous.4open.science/api/repo/SteerScope-321B/zip \
-  -o SteerScope.zip
-unzip SteerScope.zip -d SteerScope
-rm SteerScope.zip
-cd SteerScope
-chmod +x ./scripts/*
+git clone https://github.com/yht0511/steerscope.git
+cd steerscope
 bash scripts/setup.sh
+cp .env.example .env
 ```
 
-The setup script:
-
-1. creates `.venv` from the committed `uv.lock` and downloads the NLTK `punkt` and `punkt_tab` resources required by IFEval;
-2. fetches the pinned EasySteer version and its vLLM submodule (also supported when installing from ZIP);
-3. creates `.venv-easysteer` and installs EasySteer;
-4. downloads the evaluator datasets and released concept files.
-
-EasySteer dependencies are pinned in `easysteer-requirements.txt` for Python 3.10, PyTorch 2.10.0 and CUDA 12.8. Use a compatible NVIDIA driver. The setup script checks that EasySteer and vLLM import successfully before downloading datasets.
-
-Copy the environment template and set the required credentials:
+Set `HF_TOKEN` and the generation and judge API credentials in `.env`, then run the compact 10-concept profile:
 
 ```bash
-cp .env.example .env
-nano .env
 set -a
 source .env
 set +a
-```
-
-| Variable | Purpose |
-|---|---|
-| `STEERSCOPE_GENERATION_API_KEY` | DeepSeek-V3.2 prompt and data generation |
-| `STEERSCOPE_GENERATION_BASE_URL` | OpenAI-compatible generation endpoint |
-| `STEERSCOPE_GENERATION_MODEL` | Optional API model override for data and steering-prompt generation |
-| `STEERSCOPE_JUDGE_API_KEY` | GPT-4o-mini online LM-judge evaluation |
-| `STEERSCOPE_JUDGE_BASE_URL` | OpenAI-compatible judge endpoint |
-| `STEERSCOPE_JUDGE_MODEL` | Optional API model override for LM judging |
-| `HF_TOKEN` | Access to gated model weights |
-| `HF_HOME` | Optional Hugging Face cache directory |
-| `STEERSCOPE_CACHE_DIR` | Optional SteerScope cache directory |
-
-Nonempty model environment variables override the YAML model names; leaving them
-empty preserves the paper defaults. Set the exact model IDs accepted by your API
-provider, then reload `.env` before launching. 
-
-Downloaded datasets and model weights remain subject to their upstream licenses and terms. See [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
-
-## Reproducing the experiments
-
-Run any of the four released experiment profiles:
-
-```bash
-./scripts/run_2b_l10.sh
-./scripts/run_2b_l20.sh
-./scripts/run_9b_l20.sh
-./scripts/run_9b_l31.sh
-```
-
-We ran each of the four experiment profiles on eight NVIDIA A100 GPUs (80 GB each).
-Results are saved to `outputs/paper/<model>/<layer>/`.
-
-
-For a smaller 10-concept run with Gemma-2-2B-it at layer 20:
-
-```bash
 ./scripts/run_2b_l20_10concepts.sh
 ```
 
-This runs the same complete workflow for 21 methods, excluding HyperSteer, FLAS,
-and SFT. Its configurations are in `steerscope/sweep/paper/2b/l20_10concepts/`, with a
-separate scheduler config at `steerscope/sweep/paper/scheduler_configs/2b_l20_10concepts.yaml`.
-Results go to `outputs/paper/2b/l20_10concepts/`. This profile uses two GPUs.
+This profile evaluates 20 methods plus the random control on Gemma-2-2B-it and uses two GPUs by default. Resource settings are in [`2b_l20_10concepts.yaml`](steerscope/sweep/paper/scheduler_configs/2b_l20_10concepts.yaml).
 
-GPU assignments and resource settings can be adjusted in `steerscope/sweep/paper/scheduler_configs/`
+## Reproduce the paper
 
-## Experiment configurations
+| Backbone | Layer | Command |
+|---|---:|---|
+| Gemma-2-2B-it | 10 | `./scripts/run_2b_l10.sh` |
+| Gemma-2-2B-it | 20 | `./scripts/run_2b_l20.sh` |
+| Gemma-2-9B-it | 20 | `./scripts/run_9b_l20.sh` |
+| Gemma-2-9B-it | 31 | `./scripts/run_9b_l31.sh` |
 
-The repository contains four complete profiles:
+The full profiles were run on 8 × NVIDIA A100 GPUs. Results are written to `outputs/paper/<model>/<layer>/`.
 
-| Backbone | Layers |
-|---|---|
-| `google/gemma-2-2b-it` | 10, 20 |
-| `google/gemma-2-9b-it` | 20, 31 |
-
-Method, generalization, and data-dependence YAML files are generated from:
-
-```text
-steerscope/sweep/paper/generate_configs.py
-```
-
-Regenerate and validate them with:
+Regenerate and validate experiment configurations:
 
 ```bash
 .venv/bin/python steerscope/sweep/paper/generate_configs.py
 .venv/bin/python steerscope/sweep/paper/validate_configs.py
 ```
 
-Do not edit generated experiment YAML files by hand. Resource settings belong in the scheduler profiles.
-
-## Analysis
-
-After the 2B/l20 and 9B/l20 experiments finish, run the analysis notebook from top to bottom:
+Run the analysis notebook after the 2B/l20 and 9B/l20 profiles finish:
 
 ```bash
 .venv/bin/jupyter lab steerscope/sweep/paper/scheduler_metrics_analysis.ipynb
 ```
 
-The first cell defines the result roots and figure destination.Tables are displayed in the notebook, and figures are saved under:
+## Extend SteerScope
 
-```text
-steerscope/sweep/paper/paper_figures/
+Add steering methods under `steerscope/models/` and evaluators under `steerscope/evaluators/`. See [the extension guide](steerscope/README.md) for the integration steps.
+
+## Tests
+
+```bash
+.venv/bin/python -m pytest steerscope/tests/unit_tests
 ```
-
-The analysis selects one global factor for each method and uses that fixed factor in all downstream best-factor comparisons.
-
-
-## Repository layout
-
-```text
-SteerScope/
-├── scripts/
-│   ├── setup.sh
-│   ├── run_2b_l10.sh
-│   ├── run_2b_l20.sh
-│   ├── run_2b_l20_10concepts.sh
-│   ├── run_9b_l20.sh
-│   └── run_9b_l31.sh
-├── steerscope/
-│   ├── models/             # steering methods
-│   ├── evaluators/         # evaluation metrics
-│   ├── evaluation/         # evaluator graph and result store
-│   ├── inference/          # inference backends
-│   ├── data/               # dataset downloaders
-│   ├── studies/            # data-dependence utilities
-│   └── sweep/paper/        # formal configs, scheduler, and analysis
-├── reference/EasySteer/    # pinned submodule
-├── pyproject.toml
-└── uv.lock
-```
-
-See [`steerscope/README.md`](steerscope/README.md) for instructions on adding methods and evaluators.
 
 ## License
 
-SteerScope is released under the Apache License 2.0. See [`LICENSE`](LICENSE), [`NOTICE`](NOTICE), and [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+SteerScope is released under the [Apache License 2.0](LICENSE).
